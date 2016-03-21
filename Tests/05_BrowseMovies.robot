@@ -12,7 +12,7 @@ Test Teardown  Common.End Web Test
 # Tester can reset GLOBAL Variables for particular TestSuit
 #${BROWSER} =  ff                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 #${START_URL} =  http://www2.memocast.com
-#${USER_NAME} =  novikov6455@gmail.com
+#${LOGIN} =   novikov6455@gmail.com
 #${PASSWORD} =  5906455
 ${FILM_TO_TRY} =  admiral 2008
 ${active_player} =  divMemocastFlashPlayer

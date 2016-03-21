@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Suite description: Page My profile
 Library  Selenium2Library  1.5  10	    # Sets default timeout to 1.5 seconds and default implicit_wait to 10 seconds
-Library     FakerLibrary         locale=en_US
+Library  FakerLibrary
 Library	 OperatingSystem
 Resource  ../Resources/Common.robot     # Common resources keep in Common.robot
 
@@ -14,7 +14,7 @@ Test Teardown  Common.End Web Test
 # Tester can reset GLOBAL Variables for particular TestSuit
 #${BROWSER} =  ff                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 #${START_URL} =  http://www2.memocast.com
-#${USER_NAME} =  novikov6455@gmail.com
+#${LOGIN}  novikov6455@gmail.com
 #${PASSWORD} =  5906455
 #C:\\development\\memocast-test\\Resources\\usericon2.jpg
 ${disk_directory} =  C:/\\
@@ -26,6 +26,8 @@ ${file_1} =  usericon1.jpg
 ${file_2} =  usericon2.jpg
 ${file_path1} =  C:\\development\\memocast-test\\Resources\\usericon1.jpg
 ${file_path2} =  C:\\development\\memocast-test\\Resources\\usericon2.jpg
+${label_number} =  1
+
 
 *** Test Cases ***
 Page My_Profile should contains
@@ -302,19 +304,18 @@ User can update information about Youself
     Wait Until Page Contains Element   	ctl01
 
     COMMENT         Set and Type test variable for input form
-    #${FirstName} =  FakerLibrary.First Name
-    ${LastName} =   FakerLibrary.Last Name
+    ${NewFirstName} =  FakerLibrary.First Name
+    ${NewLastName} =   FakerLibrary.Last Name
     ${Date} =       FakerLibrary.Date
     ${City} =       FakerLibrary.City
     ${State} =      FakerLibrary.State
     ${Country} =    FakerLibrary.Country
-    ${FirstName}    First Name
-    #Log    ${First Name}
-    #${Last Name2}    Last Name
-    #Log    ${Last Name2}
+    #${FirstName}    First Name
+    Log    ${NewFirstName}
+    Log    ${NewLastName}
 
-    input text  xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']  ${FirstName}
-    input text  xpath=.//*[@id='cphMain_cphMain_content_tbLastName']  ${LastName}
+    input text  xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']  ${NewFirstName}
+    input text  xpath=.//*[@id='cphMain_cphMain_content_tbLastName']  ${NewLastName}
     input text  xpath=.//*[@id='cphMain_cphMain_content_tbBirthDate']  ${Date}
 
     ${label_number} =   FakerLibrary.Random Int  1  3
@@ -326,8 +327,26 @@ User can update information about Youself
 
     Wait Until Page Contains Element   	ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate
     Click Button   	ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate
-
     capture page screenshot
+
+    COMMENT         Return First conditions
+    COMMENT         Navigate to left About me submenu
+    click element                   xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a
+    Wait Until Page Contains Element   	xpath=.//*[@id='cphMain_cphMain_content_Title1_ctriTitle']/span
+
+    COMMENT         Review and exchange Personal information to OLD CONDITIONS
+    click element                   xpath=.//*[@id='content']/div/div[2]/div[2]/a
+    Wait Until Page Contains Element   	ctl01
+
+    COMMENT         Set and Type test variable for input form
+    input text  xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']  ${FIRST_NAME}
+    input text  xpath=.//*[@id='cphMain_cphMain_content_tbLastName']  ${LAST_NAME}
+    ${label_number}  set variable  2
+    click element  xpath=.//*[@id='cphMain_cphMain_content_ddlGender']/label[${label_number}]/span
+    Wait Until Page Contains Element   	ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate
+    Click Button   	ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate
+    capture page screenshot
+    WAIT UNTIL PAGE CONTAINS  ${USER_NAME}
 
 User can update their foto
     [Tags]    DEBUG 06.19
@@ -353,7 +372,7 @@ User can update their foto
     COMMENT         Replace avatar picture in input form
      #C:\development\memocast-test\Resources
     wait until page contains element  xpath=.//*[@id='cphMain_cphMain_content_fuImage']
-    click element  xpath=.//*[@id='cphMain_cphMain_content_fuImage']
+    #click element  xpath=.//*[@id='cphMain_cphMain_content_fuImage']
     #${file_path} =  Join Path  ${disk_directory}  ${project_directory}  ${title_directory}  ${resurs_directory}  ${file_2}
     #Choose File	 xpath=.//*[@id='cphMain_cphMain_content_fuImage']	C:\\development\\memocast-test\\Resources\\usericon2.jpg
     Choose File	 xpath=.//*[@id='cphMain_cphMain_content_fuImage']	${file_path2}
@@ -372,7 +391,7 @@ User can update their foto
 
     COMMENT         Replace avatar picture in input form
     wait until page contains element  xpath=.//*[@id='cphMain_cphMain_content_fuImage']
-    click element  xpath=.//*[@id='cphMain_cphMain_content_fuImage']
+    #click element  xpath=.//*[@id='cphMain_cphMain_content_fuImage']
     Choose File	 xpath=.//*[@id='cphMain_cphMain_content_fuImage']	${file_path1}
     click button  xpath=.//*[@id='cphMain_cphMain_content_LinkButton1']
     Wait Until Page Contains Element   	xpath=.//*[@id='content']/div/div[2]/div[1]/span

@@ -22,6 +22,8 @@ Test title
     When Wait until Page Contains  Login
     Then Close Browser
 
+
+
 Return all Links
     [Tags]    DEBUG 01.21
     ${links}  get all links

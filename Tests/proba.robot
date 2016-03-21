@@ -15,11 +15,12 @@ Test Teardown  Common.End Web Test
                                     # Setting Globall Variables
 ${BROWSER} =  ie                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 ${START_URL} =  http://www2.memocast.com
-${USER_NAME} =  novikov6455@gmail.com
+${LOGIN} =  novikov6455@gmail.com
 ${PASSWORD} =  5906455
 ${LOGIN_URL} =  http://www.efcon4u.ru
 ${STATUS_1} =  Login | Signup
 ${STATUS_2} =  Войти | Регистрация
+${USER_NAME} =  Fill Harper
 ${STATUS_3} =  Welcome, ${USER_NAME} | Logout
 ${STATUS_4} =  Привет, ${USER_NAME} | Выход
 ${USER_STATUS} =  Welcome
@@ -31,11 +32,6 @@ ${step}=  1
 ${alphabet_index}=  0
 ${return_ind}=  0
 ${words}=  erty
-
-
-
-
-
 
 *** Test Cases ***
 Begin Web Test
@@ -56,7 +52,7 @@ Begin Web Test
     ${result} =  get line  ${element_text}  0
 
     run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials
-    run keyword if  '${STATUS_NAME}' != '${USER_NAME}'  Logout and Login with valid cr-ls
+    run keyword if  '${STATUS_NAME}' != '${LOGIN}'  Logout and Login with valid cr-ls
 
 Mytest
 #robot -d results tests/proba.robot

@@ -9,10 +9,13 @@ Library  ../Resources/Common.py
                                     # Setting Globall Variables
 ${BROWSER} =  ie                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 ${START_URL} =  http://www2.memocast.com
-${USER_NAME} =  novikov6455@gmail.com
+${LOGIN} =  novikov6455@gmail.com
 ${PASSWORD} =  5906455
 ${STATUS_1} =  Login | Signup
 ${STATUS_2} =  Войти | Регистрация
+${FIRST_NAME} =  Fill
+${LAST_NAME} =  Harper
+${USER_NAME} =  Fill Harper
 ${STATUS_NAME} =  Somebody
 ${result} =  one
 
@@ -23,16 +26,16 @@ Begin Web Test
     And Maximize Browser Window
     Then wait until page contains element  id=ctl34_HyperLink1
     #Change interface languages
-    #Login with valid credentials
-    #Then wait until page contains element  id=ctl34_HyperLink1
-    #####      Request of system STATUS
+
+    COMMENT      Request of system STATUS
     ${element_text} =  set variable  request
     ${element_text}  get text  css=.status-bar
     #get line count  ${element_text}
     #log  ${element_text}
     ${result} =  get line  ${element_text}  0
-    #####  Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)
-    run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials
+
+    COMMENT  Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)
+    run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials  ${LOGIN}  ${PASSWORD}
     ${STATUS_NAME}  get text  id=ctl34_lblUserName
     run keyword if  '${STATUS_NAME}' != '${USER_NAME}'  Logout and Login with valid cr-ls
 
@@ -44,11 +47,12 @@ End Web Test
     close all browsers
 
 Login with valid credentials
+    [Arguments]  ${LOGIN}  ${PASSWORD}
     #Open Browser  ${START_URL}  ${BROWSER}
     #Then wait until page contains element  css=#ctl34_aLogin
     Then click link  id=ctl34_aLogin
     Then wait until page contains element  css=.memo-header
-    Then input text  id=cphMain_tbLogin  ${USER_NAME}
+    Then input text  id=cphMain_tbLogin  ${LOGIN}
     Then input password  id=cphMain_tbPassword  ${PASSWORD}
     Then unselect checkbox  id=cbRememberMe    # should be set on the vertual mashins
     Then click Button  id=btLoginSubmitButton
@@ -56,7 +60,7 @@ Login with valid credentials
 
 Logout and Login with valid cr-ls
     Then click link  css=#ctl34_aLogout
-    Then Login with valid credentials
+    Then Login with valid credentials  ${LOGIN}  ${PASSWORD}
 
 Change interface languages
     Then click image  /img/lang-eng.png
