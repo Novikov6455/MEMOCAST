@@ -1,1 +1,0 @@
-"This local memocast-test text file"
