@@ -13,26 +13,46 @@ Test Teardown  Common.End Web Test
 # Tester can reset GLOBAL Variables for particular TestSuit
 #${BROWSER} =  ff                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 #${START_URL} =  http://www2.memocast.com
-#${LOGIN}  novikov6455@gmail.com
-#${PASSWORD} =  5906455
-
+#${LoginStatus} =   Login Denied
+&{NEW_USER_1} =       Email=fred123@gmail.com  Firstname=Fred  LastName=Smith  Password=Smith123
 
 *** Test Cases ***
 User can create an account and log in
     [Tags]    DEBUG 07.11
-    #robot -d results -t "User can create an account and log in" tests/07_LoginPassword.robot
+    #robot -d results -t "User can create an account and log in" tests/08_LoginPassword.robot
     Logout to start conditions
-    Create Valid User    fred123@gmail.com   Fred   Smith   Smith123
-    #Attempt to Login with new Credentials
-    #Status Should Be    Logged In
-    COMMENT  New User Logged In
 
+    COMMENT  Set reject LoginSTATUS:  Login Denied
+    ${LoginStatus} =   set variable  Login Denied
 
+    #                                    email                  / first name               / second name            / password
+    #${USER_NAME} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
+    &{NEW_USER_1} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
+
+    Attempt to Login with new Credentials   &{NEW_USER_1}[Login]   &{NEW_USER_1}[Password]
+    #log  ${USER_NAME}
+    ${LoginStatus} =   Get new Login Status for  &{NEW_USER_1}[UserName]
+
+    COMMENT  LoginStatus Should Be    Logged In
+    log  ${LoginStatus}
+    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  User Denied
 User cannot log in with bad password
-    Create Valid User    betty    P4ssw0rd
-    Attempt to Login with Credentials    betty    wrong
-    Status Should Be    Access Denied
+    [Tags]    DEBUG 07.12
+    #robot -d results -t "User cannot log in with bad password" tests/07_LoginPassword.robot
+    Logout to start conditions
+    COMMENT  Set reject LoginSTATUS:  Login Denied
+    ${LoginStatus} =   set variable  Login Denied
+    #                                    email                  / first name               / second name            / password
+    ${USER_NAME} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
 
+    COMMENT  AND Attempt to Login with new Credentials
+    log  ${USER_NAME}
+    ${LoginStatus} =   Get new Login Status for  ${USER_NAME}
+
+    COMMENT  LoginStatus Should Be    Logged In
+    log  ${LoginStatus}
+    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  User Denied
+    Status Should Be    Access Denied
 
 *** Keywords ***
 Logout to start conditions
@@ -53,14 +73,20 @@ Create valid user
     input text  xpath=.//*[@id='cphMain_tbLastName']  ${NewLastName}
     input text  xpath=.//*[@id='cphMain_tbPassword']  ${NewPassword}
     input text  xpath=.//*[@id='cphMain_tbConfirmPassword']  ${NewPassword}
-    Wait Until Element Is Enabled   	btSignupSubmitButton
-    Click Button   	btSignupSubmitButton
 
-    COMMENT     Create for new User    login and  password
+    COMMENT     Create for new User:    UserName, login, and  Password
     ${USER_NAME} =  catenate  ${NewFirstname}  ${NewLastName}
     ${LOGIN} =  set variable  ${NewEmail}
     ${PASSWORD} =  set variable  ${NewPassword}
-    set selenium speed  2
+    &{NEW_USER_1} =  Create dictionary  &{NEW_USER_1}   UserName=${USER_NAME}  Login=${LOGIN}
+    COMMENT  This is  New User:   '&{NEW_USER_1}'
+    Wait Until Element Is Enabled   	btSignupSubmitButton
+    Click Button   	btSignupSubmitButton
+    return from keyword   &{NEW_USER_1}
+
+Attempt to Login with new Credentials
+    [Arguments]   ${LOGIN}  ${PASSWORD}
+    set selenium speed  1
 
     COMMENT      Request of system STATUS
     ${element_text} =  set variable  request
@@ -71,17 +97,15 @@ Create valid user
 
     COMMENT     Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)
     run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials  ${LOGIN}  ${PASSWORD}
-    ${STATUS_NAME}  get text  id=ctl34_lblUserName
+    #return from keyword   ${USER_NAME}
+
+
+Get new Login Status for
+    [Arguments]  ${USER_NAME}
+    ${STATUS_NAME} =   get text  xpath=.//*[@id='ctl34_lblUserName']
     run keyword if  '${STATUS_NAME}' != '${USER_NAME}'  log   StatusName: ${STATUS_NAME} not equal UserName: ${USER_NAME}
+    ${LoginStatus} =  set variable if  '${STATUS_NAME}' == '${USER_NAME}'     Loged In
     capture page screenshot
+    #[Return]    ${LoginStatus}
+    Return from keyword    ${LoginStatus}
 
-
-Creating user with invalid password should fail
-    [Arguments]    ${password}    ${error}
-    Create user    example    ${password}
-    Status should be    Creating user failed: ${error}
-
-Login
-    [Arguments]    ${username}    ${password}
-    Attempt to login with credentials    ${username}    ${password}
-    Status should be    Logged In

@@ -32,6 +32,16 @@ ${step}=  1
 ${alphabet_index}=  0
 ${return_ind}=  0
 ${words}=  erty
+${EXAMPLE}      This value is joined    together with a space
+${MULTILINE}    SEPARATOR=\n    First line
+...             Second line     Third line   Fourth line
+...             Fifth line
+
+&{USER 1}       name=Matti    address=xxx         phone=123
+&{USER 2}       name=Teppo    address=yyy         phone=456
+&{MANY}         first=1       second=${2}         ${3}=third
+&{EVEN MORE}    &{MANY}       first=override      empty=
+...             =empty        key\=here=value
 
 *** Test Cases ***
 Begin Web Test
@@ -176,6 +186,34 @@ Generate Fake Data Example2
     ${Last Name}    Last Name
     Log    ${Last Name}
 
+Prob04
+#robot -d results -t "Prob04" tests/proba.robot
+# EXampl with multiline and separator \n
+    log  ${EXAMPLE}
+    log  ${MULTILINE}
+    log  ${MULTILINE}[1]            # it dosn't work
+    ${result} =  get line  ${MULTILINE}  2
+    log  ${result}
+
+Prob05
+#robot -d results -t "Prob05" tests/proba.robot
+# EXampl with dictionary
+#*** variables ***
+#&{USER 1}       name=Matti    address=xxx         phone=123
+#&{USER 2}       name=Teppo    address=yyy         phone=456
+#&{MANY}         first=1       second=${2}         ${3}=third
+#&{EVEN MORE}    &{MANY}       first=override      empty=
+#...             =empty        key\=here=value
+
+    log  &{USER 1}[name]
+    log  ${USER 1.name}
+    log  &{USER 2}[address]
+    log  &{MANY}[first]
+    log  &{MANY}[${3}]
+    #log  &{EVEN MORE}[&{MANY}]
+    log  &{EVEN MORE}[empty]
+    log  &{EVEN MORE}[]
+    log  &{EVEN MORE}[key\=here]
 
 
 
