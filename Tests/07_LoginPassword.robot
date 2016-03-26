@@ -15,48 +15,52 @@ Test Teardown  Common.End Web Test
 #${START_URL} =  http://www2.memocast.com
 #${LoginStatus} =   Login Denied
 &{NEW_USER_1} =       Email=fred123@gmail.com  Firstname=Fred  LastName=Smith  Password=Smith123
+${Bad_Password} =  AnyTHING
 
 *** Test Cases ***
 User can create an account and log in
     [Tags]    DEBUG 07.11
-    #robot -d results -t "User can create an account and log in" tests/08_LoginPassword.robot
+    #robot -d results -t "User can create an account and log in" tests/07_LoginPassword.robot
     Logout to start conditions
 
     COMMENT  Set reject LoginSTATUS:  Login Denied
     ${LoginStatus} =   set variable  Login Denied
 
-    #                                    email                  / first name               / second name            / password
-    #${USER_NAME} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
+    COMMENT  Create Valid User
+    # dictionary                                    email                  / first name               / second name            / password
     &{NEW_USER_1} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
 
     Attempt to Login with new Credentials   &{NEW_USER_1}[Login]   &{NEW_USER_1}[Password]
-    #log  ${USER_NAME}
     ${LoginStatus} =   Get new Login Status for  &{NEW_USER_1}[UserName]
 
     COMMENT  LoginStatus Should Be    Logged In
     log  ${LoginStatus}
-    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  User Denied
+    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  Login Denied
+
 User cannot log in with bad password
     [Tags]    DEBUG 07.12
     #robot -d results -t "User cannot log in with bad password" tests/07_LoginPassword.robot
     Logout to start conditions
     COMMENT  Set reject LoginSTATUS:  Login Denied
     ${LoginStatus} =   set variable  Login Denied
-    #                                    email                  / first name               / second name            / password
-    ${USER_NAME} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
 
-    COMMENT  AND Attempt to Login with new Credentials
-    log  ${USER_NAME}
-    ${LoginStatus} =   Get new Login Status for  ${USER_NAME}
+    COMMENT  Create Valid User
+    # dictionary                                    email                  / first name               / second name            / password
+    &{NEW_USER_1} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
 
-    COMMENT  LoginStatus Should Be    Logged In
+    COMMENT   CHANGE CREATED PASSWORD UPON BAD_PASSWORD
+    Attempt to Login with new Credentials   &{NEW_USER_1}[Login]   ${WRONG_PASSWORD}
+    ${LoginStatus} =   Get new Login Status for  &{NEW_USER_1}[UserName]
+
+    COMMENT  LoginStatus Should Be    Login Denied
     log  ${LoginStatus}
-    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  User Denied
-    Status Should Be    Access Denied
+    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  Login Denied
+    #Status Should Be    Login Denied
 
 *** Keywords ***
 Logout to start conditions
     click link  css=#ctl34_aLogout
+
     COMMENT      Request of system STATUS
     ${element_text} =  set variable  request
     ${element_text}  get text  css=.status-bar
@@ -79,7 +83,7 @@ Create valid user
     ${LOGIN} =  set variable  ${NewEmail}
     ${PASSWORD} =  set variable  ${NewPassword}
     &{NEW_USER_1} =  Create dictionary  &{NEW_USER_1}   UserName=${USER_NAME}  Login=${LOGIN}
-    COMMENT  This is  New User:   '&{NEW_USER_1}'
+    COMMENT  This is  New User:   &{NEW_USER_1}[UserName]
     Wait Until Element Is Enabled   	btSignupSubmitButton
     Click Button   	btSignupSubmitButton
     return from keyword   &{NEW_USER_1}
@@ -97,7 +101,6 @@ Attempt to Login with new Credentials
 
     COMMENT     Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)
     run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials  ${LOGIN}  ${PASSWORD}
-    #return from keyword   ${USER_NAME}
 
 
 Get new Login Status for

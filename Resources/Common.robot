@@ -11,8 +11,11 @@ ${BROWSER} =  ie                    # ie=Internet Explorer, ff=FireFox, gc=Googl
 ${START_URL} =  http://www2.memocast.com
 ${LOGIN} =  novikov6455@gmail.com
 ${PASSWORD} =  5906455
+${WRONG_PASSWORD} =  5906456
 ${STATUS_1} =  Login | Signup
 ${STATUS_2} =  Войти | Регистрация
+${STATUS_3} =  Welcome
+${STATUS_4} =  Привет
 ${FIRST_NAME} =  Fill
 ${LAST_NAME} =  Harper
 ${USER_NAME} =  Fill Harper
@@ -35,7 +38,7 @@ Begin Web Test
     ${result} =  get line  ${element_text}  0
 
     COMMENT  Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)
-    run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials  ${LOGIN}  ${PASSWORD}
+    run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials
     ${STATUS_NAME}  get text  id=ctl34_lblUserName
     run keyword if  '${STATUS_NAME}' != '${USER_NAME}'  Logout and Login with valid cr-ls
 
@@ -57,6 +60,42 @@ Login with valid credentials
     Then unselect checkbox  id=cbRememberMe    # should be set on the vertual mashins
     Then click Button  id=btLoginSubmitButton
     WAIT UNTIL PAGE CONTAINS ELEMENT  id=ctl34_lblUserName
+
+Login with credentials
+    [Arguments]  ${LOGIN}  ${PASSWORD}
+    Then wait until page contains element  css=#ctl34_aLogin
+    Then click link  id=ctl34_aLogin
+    Then wait until page contains element  css=.memo-header
+    Then input text  id=cphMain_tbLogin  ${LOGIN}
+    Then input password  id=cphMain_tbPassword  ${PASSWORD}
+    Then unselect checkbox  id=cbRememberMe    # should be set on the vertual mashins
+    # Set delay on particular operation
+    ${orig timeout} =	Set Selenium Implicit Wait	10 seconds
+    log  ${orig timeout}
+    Then click Button  id=btLoginSubmitButton
+    WAIT UNTIL ELEMENT IS VISIBLE  css=#ctl34_A7
+    Set Selenium Implicit Wait	${orig timeout}
+
+Get system status
+    COMMENT      Request of system STATUS
+    #${element_text} =  set variable  request
+    ${element_text}  get text  css=.status-bar
+    #get line count  ${element_text}
+    #log  ${element_text}
+    ${result} =  get line  ${element_text}  0
+    ${LoginStatus}=  set variable if  '${result}' >= '${STATUS_3}' or '${result}' >= '${STATUS_4}'  Logged     Open for LogIn
+    ${STATUS_NAME}=  Run Keyword If  '${LoginStatus}' == 'Logged'   Get User Name
+    ${StatusSuggestion}=  Run Keyword If  '${LoginStatus}' == 'Open for LogIn'  Check if suggestion present
+    ${LoginStatus}=  catenate  ${STATUS_NAME}  ${LoginStatus}  suggestions:  ${StatusSuggestion}
+    return from keyword  ${LoginStatus}
+
+Get User Name
+    ${STATUS_NAME}=  get text  id=ctl34_lblUserName
+    return from keyword  ${STATUS_NAME}
+Check if suggestion present
+    element should be visible  css=#cphMain_msg_divError
+    ${StatusSuggestion}=  get text  css=#cphMain_msg_divError
+    return from keyword  ${StatusSuggestion}
 
 Logout and Login with valid cr-ls
     Then click link  css=#ctl34_aLogout

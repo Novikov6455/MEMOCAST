@@ -20,9 +20,12 @@ ${FILM_TO_TRY} =  admiral 2008
 *** Test Cases ***
 User can LogIn with Valid Credentials
     [Tags]    DEBUG 01.1
+    #robot -d results -t "User can LogIn with Valid Credentials" tests/01_HeaderCommon.robot
     #Given page should contain  Logout
     And click link  css=#ctl34_aLogout           # reset conditions for start condition
-    Then Login with valid credentials
+    Then Login with credentials  ${LOGIN}  ${PASSWORD}
+    ${LoginStatus}=  Get system status
+    log  ${LoginStatus}
 
 User can change interface languages
     [Tags]    DEBUG 01.2
