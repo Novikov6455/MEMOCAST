@@ -16,9 +16,9 @@ ${STATUS_1} =  Login | Signup
 ${STATUS_2} =  Войти | Регистрация
 ${STATUS_3} =  Welcome
 ${STATUS_4} =  Привет
-${FIRST_NAME} =  Fill
-${LAST_NAME} =  Harper
-${USER_NAME} =  Fill Harper
+${FIRST_NAME} =  Vadim
+${LAST_NAME} =  Novikov
+${USER_NAME} =  Vadim Novikov
 ${STATUS_NAME} =  Somebody
 ${result} =  one
 
@@ -31,14 +31,13 @@ Begin Web Test
     #Change interface languages
 
     COMMENT      Request of system STATUS
-    ${element_text} =  set variable  request
     ${element_text}  get text  css=.status-bar
     #get line count  ${element_text}
     #log  ${element_text}
     ${result} =  get line  ${element_text}  0
 
     COMMENT  Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)
-    run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials
+    run keyword if  '${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'  Login with valid credentials  ${LOGIN}  ${PASSWORD}
     ${STATUS_NAME}  get text  id=ctl34_lblUserName
     run keyword if  '${STATUS_NAME}' != '${USER_NAME}'  Logout and Login with valid cr-ls
 
@@ -70,21 +69,21 @@ Login with credentials
     Then input password  id=cphMain_tbPassword  ${PASSWORD}
     Then unselect checkbox  id=cbRememberMe    # should be set on the vertual mashins
     # Set delay on particular operation
-    ${orig timeout} =	Set Selenium Implicit Wait	10 seconds
-    log  ${orig timeout}
+    ${orig Implicit Wait} =	Get Selenium Implicit Wait
+    Set Selenium Implicit Wait	15 seconds
     Then click Button  id=btLoginSubmitButton
-    WAIT UNTIL ELEMENT IS VISIBLE  css=#ctl34_A7
-    Set Selenium Implicit Wait	${orig timeout}
+    #WAIT UNTIL ELEMENT IS VISIBLE  css=#ctl34_A7
+    WAIT UNTIL ELEMENT IS VISIBLE  css=.status-bar  5
+    Set Selenium Implicit Wait	${orig Implicit Wait}
 
 Get system status
     COMMENT      Request of system STATUS
-    #${element_text} =  set variable  request
     ${element_text}  get text  css=.status-bar
     #get line count  ${element_text}
     #log  ${element_text}
     ${result} =  get line  ${element_text}  0
     ${LoginStatus}=  set variable if  '${result}' >= '${STATUS_3}' or '${result}' >= '${STATUS_4}'  Logged     Open for LogIn
-    ${STATUS_NAME}=  Run Keyword If  '${LoginStatus}' == 'Logged'   Get User Name
+    ${STATUS_NAME}=  Run Keyword If  '${LoginStatus}' == 'Logged'   Get User Name  ELSE  set variable  System
     ${StatusSuggestion}=  Run Keyword If  '${LoginStatus}' == 'Open for LogIn'  Check if suggestion present
     ${LoginStatus}=  catenate  ${STATUS_NAME}  ${LoginStatus}  suggestions:  ${StatusSuggestion}
     return from keyword  ${LoginStatus}

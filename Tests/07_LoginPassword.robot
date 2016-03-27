@@ -23,39 +23,28 @@ User can create an account and log in
     #robot -d results -t "User can create an account and log in" tests/07_LoginPassword.robot
     Logout to start conditions
 
-    COMMENT  Set reject LoginSTATUS:  Login Denied
-    ${LoginStatus} =   set variable  Login Denied
-
-    COMMENT  Create Valid User
+    COMMENT          Create Valid User and Keep in Data Base
     # dictionary                                    email                  / first name               / second name            / password
     &{NEW_USER_1} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
-
-    Attempt to Login with new Credentials   &{NEW_USER_1}[Login]   &{NEW_USER_1}[Password]
-    ${LoginStatus} =   Get new Login Status for  &{NEW_USER_1}[UserName]
-
-    COMMENT  LoginStatus Should Be    Logged In
-    log  ${LoginStatus}
-    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  Login Denied
+    ${LoginStatus}=  Get system status
+    run keyword if  '${LoginStatus}' == '*Logged*'   Log   New User: &{NEW_USER_1}[UserName] Logged
+    run keyword if  '${LoginStatus}' >= '*Open for LogIn'  Login with credentials  &{NEW_USER_1}[Login]   &{NEW_USER_1}[Password]
+    ${LoginStatus}=  Get system status
 
 User cannot log in with bad password
     [Tags]    DEBUG 07.12
     #robot -d results -t "User cannot log in with bad password" tests/07_LoginPassword.robot
     Logout to start conditions
-    COMMENT  Set reject LoginSTATUS:  Login Denied
-    ${LoginStatus} =   set variable  Login Denied
 
-    COMMENT  Create Valid User
+    COMMENT          Create Valid User
     # dictionary                                    email                  / first name               / second name            / password
     &{NEW_USER_1} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
 
-    COMMENT   CHANGE CREATED PASSWORD UPON BAD_PASSWORD
-    Attempt to Login with new Credentials   &{NEW_USER_1}[Login]   ${WRONG_PASSWORD}
-    ${LoginStatus} =   Get new Login Status for  &{NEW_USER_1}[UserName]
-
-    COMMENT  LoginStatus Should Be    Login Denied
-    log  ${LoginStatus}
-    run keyword if  '${LoginStatus}' == 'Loged In'  COMMENT  New User Logged In  ELSE   COMMENT  Login Denied
-    #Status Should Be    Login Denied
+    COMMENT          CHANGE CREATED PASSWORD UPON BAD_PASSWORD
+    ${LoginStatus}=  Get system status
+    run keyword if  '${LoginStatus}' == '*Logged*'   Log   New User: &{NEW_USER_1}[UserName] Logged
+    run keyword if  '${LoginStatus}' >= '*Open for LogIn'  Login with credentials  &{NEW_USER_1}[Login]   ${Bad_Password}
+    ${LoginStatus}=  Get system status
 
 *** Keywords ***
 Logout to start conditions
@@ -83,9 +72,13 @@ Create valid user
     ${LOGIN} =  set variable  ${NewEmail}
     ${PASSWORD} =  set variable  ${NewPassword}
     &{NEW_USER_1} =  Create dictionary  &{NEW_USER_1}   UserName=${USER_NAME}  Login=${LOGIN}
-    COMMENT  This is  New User:   &{NEW_USER_1}[UserName]
     Wait Until Element Is Enabled   	btSignupSubmitButton
     Click Button   	btSignupSubmitButton
+        # Set delay on particular operation
+    ${orig Implicit Wait} =	Get Selenium Implicit Wait
+    Set Selenium Implicit Wait	15 seconds
+    WAIT UNTIL ELEMENT IS ENABLED   css=.status-bar
+    Log   This is New User: &{NEW_USER_1}[UserName]
     return from keyword   &{NEW_USER_1}
 
 Attempt to Login with new Credentials
