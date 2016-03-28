@@ -62,22 +62,20 @@ Login with valid credentials
 
 Login with credentials
     [Arguments]  ${LOGIN}  ${PASSWORD}
-    Then wait until page contains element  css=#ctl34_aLogin
+    Then wait until page contains element  css=#ctl34_aLogin  3
     Then click link  id=ctl34_aLogin
     Then wait until page contains element  css=.memo-header
     Then input text  id=cphMain_tbLogin  ${LOGIN}
     Then input password  id=cphMain_tbPassword  ${PASSWORD}
     Then unselect checkbox  id=cbRememberMe    # should be set on the vertual mashins
     # Set delay on particular operation
-    ${orig Implicit Wait} =	Get Selenium Implicit Wait
-    Set Selenium Implicit Wait	15 seconds
     Then click Button  id=btLoginSubmitButton
-    #WAIT UNTIL ELEMENT IS VISIBLE  css=#ctl34_A7
-    WAIT UNTIL ELEMENT IS VISIBLE  css=.status-bar  5
-    Set Selenium Implicit Wait	${orig Implicit Wait}
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   2
 
 Get system status
-    COMMENT      Request of system STATUS
+    COMMENT      REQUEST OF SYSTEM  STATUS
+    WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   3
+    WAIT UNTIL ELEMENT IS VISIBLE  css=.status-bar
     ${element_text}  get text  css=.status-bar
     #get line count  ${element_text}
     #log  ${element_text}
@@ -85,8 +83,9 @@ Get system status
     ${LoginStatus}=  set variable if  '${result}' >= '${STATUS_3}' or '${result}' >= '${STATUS_4}'  Logged     Open for LogIn
     ${STATUS_NAME}=  Run Keyword If  '${LoginStatus}' == 'Logged'   Get User Name  ELSE  set variable  System
     ${StatusSuggestion}=  Run Keyword If  '${LoginStatus}' == 'Open for LogIn'  Check if suggestion present
-    ${LoginStatus}=  catenate  ${STATUS_NAME}  ${LoginStatus}  suggestions:  ${StatusSuggestion}
-    return from keyword  ${LoginStatus}
+    &{SystemStatus}=  create dictionary  Subject=${STATUS_NAME}  Status=${LoginStatus}  Suggestion=${StatusSuggestion}
+    return from keyword  &{SystemStatus}
+
 
 Get User Name
     ${STATUS_NAME}=  get text  id=ctl34_lblUserName
