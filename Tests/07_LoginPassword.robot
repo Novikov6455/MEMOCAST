@@ -16,6 +16,7 @@ Test Teardown  Common.End Web Test
 #${LoginStatus} =   Login Denied
 &{NEW_USER_1} =       Email=fred128@gmail.com  Firstname=Fred  LastName=Smith  Password=Smith123
 ${Bad_Password} =  AnyTHING
+${Bad_Login}=  123456@gmail.com
 
 *** Test Cases ***
 User can create an account and log in
@@ -45,6 +46,22 @@ User cannot log in with bad password
     run keyword if  '&{SystemStatus}[Status]' == 'Logged'   Log   New User: &{SystemStatus}[Subject] Logged
     run keyword if  '&{SystemStatus}[Status]' == 'Open for LogIn'  Login with credentials  &{NEW_USER_1}[Login]   ${Bad_Password}
     &{SystemStatus}=  Get system status
+
+User cannot log in with bad LOGIN
+    [Tags]    DEBUG 07.13
+    #robot -d results -t "User cannot log in with bad LOGIN" tests/07_LoginPassword.robot
+    Logout to start conditions
+
+    COMMENT          Create Valid User
+    # dictionary                                    email                  / first name               / second name            / password
+    &{NEW_USER_1} =  Create Valid User    &{NEW_USER_1}[Email]   &{NEW_USER_1}[Firstname]  &{NEW_USER_1}[LastName]  &{NEW_USER_1}[Password]
+
+    COMMENT          CHANGE CREATED LOGIN UPON BAD_LOGIN
+    &{SystemStatus}=  Get system status
+    run keyword if  '&{SystemStatus}[Status]' == 'Logged'   Log   New User: &{SystemStatus}[Subject] Logged
+    run keyword if  '&{SystemStatus}[Status]' == 'Open for LogIn'  Login with credentials  ${Bad_Login}   &{NEW_USER_1}[Password]
+    &{SystemStatus}=  Get system status
+
 
 *** Keywords ***
 Logout to start conditions

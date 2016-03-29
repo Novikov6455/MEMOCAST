@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation    Suite description: Page My profile
-Library  Selenium2Library  1.5  10	    # Sets default timeout to 1.5 seconds and default implicit_wait to 10 seconds
+Library  Selenium2Library  2  6	    # Sets default timeout to 1.5 seconds and default implicit_wait to 5 seconds
 Library  FakerLibrary
 Library	 OperatingSystem
 Resource  ../Resources/Common.robot     # Common resources keep in Common.robot
 
 # executable Terminal string
-#robot -d results tests/06_My_Profile.robot
+#robot -d results tests/06_MyProfile.robot
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 
@@ -72,7 +72,7 @@ Page My_Profile should contains
     Page Should Contain Link   	xpath=.//a[contains(normalize-space(.), 'About me')]
 
 User can see own Account options
-    [Tags]    DEBUG 06.1
+    [Tags]    DEBUG 06.10
     #robot -d results -t "User can see own Account options" tests/06_MyProfile.robot
 
     COMMENT         Check Language of site
@@ -82,9 +82,10 @@ User can see own Account options
 
     COMMENT         Navigate to My Profile Page
     Focus   	                    xpath=.//a[contains(normalize-space(.), 'My Profile')]
-    click element                   xpath=.//a[contains(normalize-space(.), 'My Profile')]
+    mouse over                      xpath=.//a[contains(normalize-space(.), 'My Profile')]
+    #click element                   xpath=.//a[contains(normalize-space(.), 'My Profile')]
     Wait Until Element Is Visible   xpath=.//a[contains(normalize-space(.), 'My Account')]
-    #Focus                           xpath=.//a[contains(normalize-space(.), 'My Account')]
+    Focus                           xpath=.//a[contains(normalize-space(.), 'My Account')]
     click element                   xpath=.//a[contains(normalize-space(.), 'My Account')]
     Wait Until Page Contains   	    My Memocast Updates
 
@@ -111,10 +112,14 @@ User can Change their password
     COMMENT         Navigate to My Profile Page
     Focus   	                    xpath=.//a[contains(normalize-space(.), 'My Profile')]
     click element                   xpath=.//a[contains(normalize-space(.), 'My Profile')]
-    Wait Until Element Is Visible   xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   2
     Focus                           xpath=.//a[contains(normalize-space(.), 'My Profile')]
+    mouse over                      xpath=.//a[contains(normalize-space(.), 'My Profile')]
     wait until element is visible  	xpath=.//a[contains(normalize-space(.), 'Change Password')]
-    Click Link   	                Change Password
+    mouse over                      xpath=.//a[contains(normalize-space(.), 'Change Password')]
+    click element                   xpath=.//a[contains(normalize-space(.), 'Change Password')]
+    #Click Link   	                Change Password
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   2
     Wait Until Page Contains   	    Password Change
 
     COMMENT         Password change test maintained in separate test suite
@@ -132,9 +137,11 @@ User can work with their messages
     COMMENT         Navigate to My Profile Page
     Focus   	                    xpath=.//a[contains(normalize-space(.), 'My Profile')]
     click element                   xpath=.//a[contains(normalize-space(.), 'My Profile')]
-    Wait Until Element Is Visible   xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   2
     Focus                           xpath=.//a[contains(normalize-space(.), 'My Profile')]
+    mouse over                      xpath=.//a[contains(normalize-space(.), 'My Profile')]
     wait until element is visible  	xpath=.//a[contains(normalize-space(.), 'My Messages')]
+    mouse over                      xpath=.//a[contains(normalize-space(.), 'My Messages')]
     Click Link   	                My Messages
     Wait Until Page Contains   	    Messages
     capture page screenshot
@@ -161,7 +168,9 @@ User can exchange their Personal Settings
     #mouse down on link              xpath=.//a[contains(normalize-space(.), 'Personal Settings')]
     #Click Link   	                Personal Settings
     click element                   xpath=.//a[contains(normalize-space(.), 'Personal Settings')]
-    Wait Until Page Contains Element   	xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   3
+
+    Wait Until Page Contains Element   	xpath=.//*[@id='cphMain_cphMain_content_btUpdate']
 
     Element Should Be Enabled   	ctl00$ctl00$ctl00$cphMain$cphMain$content$tbFirstName
     Element Should Be Enabled   	ctl00$ctl00$ctl00$cphMain$cphMain$content$tbLastName
@@ -194,8 +203,9 @@ User can see their Personal playlists
     MOUSE OVER                      xpath=.//*[@id='ctl34_A10']
     #mouse down on link              xpath=.//*[@id='ctl34_A10']
     click element                   xpath=.//*[@id='ctl34_A10']
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   2
 
-    Wait Until Page Contains Element   	xpath=.//*[@id='cphMain_cphMain_lblTitle']
+    Wait Until Page Contains Element   	xpath=.//*[@id='cphMain_cphMain_lblTitle']  3
     capture page screenshot
 
 User can see their Personal Updates
@@ -210,11 +220,12 @@ User can see their Personal Updates
     COMMENT         Navigate to My Profile Page
     Focus   	                    xpath=.//a[contains(normalize-space(.), 'My Profile')]
     click element                   xpath=.//a[contains(normalize-space(.), 'My Profile')]
-    Wait Until Element Is Visible   xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   1
 
     COMMENT         Navigate to left Updates submenu
     Focus                           xpath=.//*[@id='content']/div/div[1]/ul/li[1]/a
-    click element                   xpath=.//*[@id='ctl34_A10']
+    click element                   xpath=.//*[@id='content']/div/div[1]/ul/li[1]/a
+    Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   1
     Wait Until Page Contains Element   	xpath=.//*[@id='content']/div/div[2]/div[1]/span
     capture page screenshot
 
