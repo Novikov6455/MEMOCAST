@@ -7,7 +7,7 @@ Library  ../Resources/Common.py
 #robot -d results tests/Common.robot
 *** Variables ***
                                     # Setting Globall Variables
-${BROWSER} =  ff                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
+${BROWSER} =  ie                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 ${START_URL} =  http://www2.memocast.com
 ${LOGIN} =  novikov6455@gmail.com
 ${PASSWORD} =  5906455

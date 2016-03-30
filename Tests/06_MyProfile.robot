@@ -90,7 +90,6 @@ User can see own Account options
     Wait Until Page Contains   	    My Memocast Updates
 
     Element Should Be Visible   	xpath=(.//div[contains(normalize-space(@class), "user-av")])[*]
-
     Element Should Be Visible   	cphMain_cphLeft_ctl00_avatar
     Element Should Be Visible   	xpath=.//a[contains(normalize-space(.), 'Updates')]
     Element Should Be Visible   	xpath=.//a[contains(normalize-space(.), 'Friends')]
