@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Test plan description: Common  Keywords for site
-Library  Selenium2Library  1  4	 # Sets default timeout to 0 seconds and default implicit_wait to 5 seconds
+Library  Selenium2Library  1  5	 # Sets default timeout to 0 seconds and default implicit_wait to 5 seconds
 Library  String
 Library  ../Resources/Common.py
 

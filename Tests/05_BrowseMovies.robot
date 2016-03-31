@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Suite description: Browse Movies Page of site also uses left part Navigation menu
-Library  Selenium2Library  1.5  10	    # Sets default timeout to 1.5 seconds and default implicit_wait to 10 seconds
+Library  Selenium2Library  1.3  10	    # Sets default timeout to 0.5 seconds and default implicit_wait to 10 seconds
 Resource  ../Resources/Common.robot     # Common resources keep in Common.robot
 Library  ../Resources/Common.py
 # executable Terminal string
@@ -16,7 +16,7 @@ Test Teardown  Common.End Web Test
 #${PASSWORD} =  5906455
 ${FILM_TO_TRY} =  admiral 2008
 ${active_player} =  divMemocastFlashPlayer
-${orig timeout} =  0.5 seconds
+${orig timeout} =  1.3 seconds
 ${constant_part_title} =   Browse / Music Videos /
 ${start_index} =  1
 ${step} =  1
@@ -130,7 +130,7 @@ User can use Left side Menu to set Categories in search filtr of Browse Movies p
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Western')]
     Element Should Be Visible   	xpath=(.//li[contains(normalize-space(.), 'Oscar nominees')])[last()]
 
-    Set Selenium Speed	            1 seconds
+    #Set Selenium Speed	            1 seconds
 
     click element   	            xpath=.//li[contains(normalize-space(.), 'Action/Adventure')]
     Wait Until Page Contains   	    Browse / Movies / Action/Adventure
@@ -334,7 +334,7 @@ User can use Left side Menu to set Categories in search filtr for Music Videos
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Soul')]
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Tango')]
 
-    Set Selenium Speed	            1 seconds
+    #Set Selenium Speed	            1 seconds
     click element   	            xpath=.//*[@id='left-menu-music']/li[1]/a
     Wait Until Page Contains   	    Browse / Music Videos
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[4]
@@ -343,6 +343,7 @@ User can use Left side Menu to set Categories in search filtr for Music Videos
     : FOR    ${INDEX}    IN RANGE    2    26
     \    ${partial_page_title}=      get text  xpath=.//*[@id='left-menu-music']/li[${INDEX}]/a
     \    ${page_title}=  catenate    ${constant_part_title}    ${partial_page_title}
+    \    mouse over                  xpath=.//*[@id='left-menu-music']/li[${INDEX}]/a
     \    click link                  xpath=.//*[@id='left-menu-music']/li[${INDEX}]/a
     \    wait until page contains    ${page_title}
     \    click element               xpath=(.//span[contains(normalize-space(@class), "col-header")])[4]

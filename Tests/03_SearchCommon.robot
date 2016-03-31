@@ -11,7 +11,7 @@ Test Teardown  Common.End Web Test
 
 *** Variables ***
 # Tester can reset GLOBAL Variables for particular TestSuita
-${BROWSER} =  ie                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
+#${BROWSER} =  ff                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 #${START_URL} =  http://www2.memocast.com
 #${LOGIN} =   novikov6455@gmail.com
 #${PASSWORD} =  5906455
@@ -42,16 +42,19 @@ User can search Movies and choose some of them from drop down preview table
     [Documentation]  During the search for the movie via Search line User can choose some of them from drop down preview table.
     [Tags]    DEBUG 03.2 ff only
     #robot -d results -t "User can search Movies and choose some of them from drop down preview table" tests/03_SearchCommon.robot
+
     Comment  In this test we use additional Locator Strategy to handle Flash Player
     Add Location Strategy    custom    Custom Locator Strategy  # don't work for ie and gc  because Flash player wrapped
     # but for ff work both strategy Locator as ff can open java script automatically
+
     Comment  Clear search field befo looking for film
     Given clear element text  id=ctl34_tbSearch
     When input text  id=ctl34_tbSearch  ${FILM_TO_TRY}
     And wait until element is visible  xpath=.//*[@id='suggestions']  30
     Then click image  xpath=.//*[@id='suggestions']/div/div[1]/div[1]/img   # Submit search
     Then wait until page contains element  id=${active_player}  20
-    Check if elements from Flash Player exist
+    Then Check if elements from Flash Player exist
+
     Comment  Exampl of working Custom Locator Strategy
     ${active_handle} =  get webelement  custom=divMemocastFlashPlayer_wrapper
     click element  ${active_handle}
@@ -59,6 +62,7 @@ User can search Movies and choose some of them from drop down preview table
     Then capture page screenshot
     #${active_handle} =  get webelement  custom=divMemocastFlashPlayer_jwplayer_controlbar_fullscreenButton
     #click element  ${active_handle}
+
     Comment  The common Locator strategy work in ff also
     Then wait until page contains element  xpath=.//*[@id='divMemocastFlashPlayer']  30
     ${active_displey} =  get webelement  xpath=.//*[@id='divMemocastFlashPlayer']

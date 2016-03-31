@@ -3,7 +3,7 @@ Documentation    Suite description: Common  Home Page Menu Navigation part of si
 Library  Selenium2Library  1.5  10	    # Sets default timeout to 1.5 seconds and default implicit_wait to 10 seconds
 Resource  ../Resources/Common.robot     # Common resources keep in Common.robot
 # executable Terminal string
-#robot -d results tests/04_SearchCommon.robot
+#robot -d results tests/04_HomePage.robot
 
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
@@ -51,8 +51,10 @@ User can open and see menu Memocast Specials
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Movies with subtitles')]
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Russian TV Channels')]
     click element                   xpath=.//span[contains(normalize-space(.), 'Memocast Specials')]
+    wait until element is not visible  xpath=(.//li[contains(normalize-space(.), 'Oscar nominees')])[1]
     element should not be visible   xpath=(.//li[contains(normalize-space(.), 'Oscar nominees')])[1]
     click element                   xpath=.//span[contains(normalize-space(.), 'Memocast Specials')]
+    wait until element is visible   xpath=(.//li[contains(normalize-space(.), 'Oscar nominees')])[1]
     Element Should Be Visible   	xpath=(.//li[contains(normalize-space(.), 'Oscar nominees')])[1]
 
 User can choose Oscar nominees film via Memocast Specials
@@ -185,8 +187,10 @@ User can open and see menu Memocast Rubrics
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Удивительное рядом')]
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Фильмы Эльдара Рязанова')]
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[2]
+    wait until element is not visible  xpath=.//li[contains(normalize-space(.), 'Новогодние фильмы')]
     element should not be visible   xpath=.//li[contains(normalize-space(.), 'Новогодние фильмы')]
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[2]
+    wait until element is visible   xpath=.//li[contains(normalize-space(.), 'Новогодние фильмы')]
     Element Should Be Visible   	xpath=.//li[contains(normalize-space(.), 'Новогодние фильмы')]
 
 User can open, choose, change, and see content via menu Memocast Rubrics
