@@ -1,0 +1,2470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160404 01:37:52.019" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="C:\development\memocast-test\tests\07_LoginPassword.robot" id="s1" name="07 LoginPassword">
+<test id="s1-t1" name="User can create an account and log in">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 01:37:52.457" level="INFO">Opening browser 'chrome' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 01:38:02.059" starttime="20160404 01:37:52.457"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 01:38:02.248" starttime="20160404 01:38:02.060"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:02.269" starttime="20160404 01:38:02.249"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:02.269" starttime="20160404 01:38:02.269"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:02.314" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:02.314" starttime="20160404 01:38:02.269"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:02.314" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:38:02.314" starttime="20160404 01:38:02.314"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:02.315" starttime="20160404 01:38:02.314"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 01:38:02.317" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 01:38:03.076" starttime="20160404 01:38:02.317"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:03.106" starttime="20160404 01:38:03.077"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:03.106" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 01:38:03.248" starttime="20160404 01:38:03.106"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:03.252" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 01:38:03.404" starttime="20160404 01:38:03.248"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 01:38:03.405" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 01:38:03.553" starttime="20160404 01:38:03.404"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:38:03.553" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:38:07.967" starttime="20160404 01:38:03.553"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:08.063" starttime="20160404 01:38:07.967"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:08.063" starttime="20160404 01:38:02.316"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:08.063" starttime="20160404 01:38:02.315"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:38:08.129" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 01:38:08.129" starttime="20160404 01:38:08.064"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:08.130" starttime="20160404 01:38:08.129"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:08.130" starttime="20160404 01:37:52.457"></status>
+</kw>
+<kw name="Logout to start conditions">
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=#ctl34_aLogout</arg>
+</arguments>
+<msg timestamp="20160404 01:38:08.131" level="INFO">Clicking link 'css=#ctl34_aLogout'.</msg>
+<status status="PASS" endtime="20160404 01:38:09.596" starttime="20160404 01:38:08.131"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:09.596" starttime="20160404 01:38:09.596"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>request</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:09.597" level="INFO">${element_text} = request</msg>
+<status status="PASS" endtime="20160404 01:38:09.597" starttime="20160404 01:38:09.596"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:09.752" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:09.753" starttime="20160404 01:38:09.597"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:09.753" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:38:09.753" starttime="20160404 01:38:09.753"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>comment</arg>
+<arg>Ok for Start</arg>
+</arguments>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Ok for Start</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:09.755" starttime="20160404 01:38:09.755"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:09.755" starttime="20160404 01:38:09.753"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:09.756" starttime="20160404 01:38:08.131"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create Valid User and Keep in Data Base</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:09.756" starttime="20160404 01:38:09.756"></status>
+</kw>
+<kw name="Create valid user">
+<arguments>
+<arg>&amp;{NEW_USER_1}[Email]</arg>
+<arg>&amp;{NEW_USER_1}[Firstname]</arg>
+<arg>&amp;{NEW_USER_1}[LastName]</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<assign>
+<var>&amp;{NEW_USER_1}</var>
+</assign>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>xpath=.//*[@id='ctl34_aSignup']</arg>
+</arguments>
+<msg timestamp="20160404 01:38:09.757" level="INFO">Clicking link 'xpath=.//*[@id='ctl34_aSignup']'.</msg>
+<status status="PASS" endtime="20160404 01:38:10.189" starttime="20160404 01:38:09.757"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbEmail']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:10.211" starttime="20160404 01:38:10.190"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbEmail']</arg>
+<arg>${NewEmail}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:10.212" level="INFO">Typing text 'fred128@gmail.com' into text field 'xpath=.//*[@id='cphMain_tbEmail']'</msg>
+<status status="PASS" endtime="20160404 01:38:10.338" starttime="20160404 01:38:10.212"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbFirstName']</arg>
+<arg>${NewFirstName}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:10.339" level="INFO">Typing text 'Fred' into text field 'xpath=.//*[@id='cphMain_tbFirstName']'</msg>
+<status status="PASS" endtime="20160404 01:38:10.483" starttime="20160404 01:38:10.339"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbLastName']</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:10.484" level="INFO">Typing text 'Smith' into text field 'xpath=.//*[@id='cphMain_tbLastName']'</msg>
+<status status="PASS" endtime="20160404 01:38:10.647" starttime="20160404 01:38:10.484"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbPassword']</arg>
+<arg>${NewPassword}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:10.648" level="INFO">Typing text 'Smith123' into text field 'xpath=.//*[@id='cphMain_tbPassword']'</msg>
+<status status="PASS" endtime="20160404 01:38:10.780" starttime="20160404 01:38:10.647"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbConfirmPassword']</arg>
+<arg>${NewPassword}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:10.781" level="INFO">Typing text 'Smith123' into text field 'xpath=.//*[@id='cphMain_tbConfirmPassword']'</msg>
+<status status="PASS" endtime="20160404 01:38:10.903" starttime="20160404 01:38:10.780"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create for new User:</arg>
+<arg>UserName, login, and</arg>
+<arg>Password</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:10.906" starttime="20160404 01:38:10.903"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${NewFirstname}</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<assign>
+<var>${USER_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:38:10.907" level="INFO">${USER_NAME} = Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:38:10.907" starttime="20160404 01:38:10.907"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NewEmail}</arg>
+</arguments>
+<assign>
+<var>${LOGIN}</var>
+</assign>
+<msg timestamp="20160404 01:38:10.908" level="INFO">${LOGIN} = fred128@gmail.com</msg>
+<status status="PASS" endtime="20160404 01:38:10.908" starttime="20160404 01:38:10.908"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NewPassword}</arg>
+</arguments>
+<assign>
+<var>${PASSWORD}</var>
+</assign>
+<msg timestamp="20160404 01:38:10.909" level="INFO">${PASSWORD} = Smith123</msg>
+<status status="PASS" endtime="20160404 01:38:10.909" starttime="20160404 01:38:10.909"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>&amp;{NEW_USER_1}</arg>
+<arg>UserName=${USER_NAME}</arg>
+<arg>Login=${LOGIN}</arg>
+</arguments>
+<assign>
+<var>&amp;{NEW_USER_1}</var>
+</assign>
+<msg timestamp="20160404 01:38:10.910" level="INFO">&amp;{NEW_USER_1} = { Email=fred128@gmail.com | Firstname=Fred | LastName=Smith | Password=Smith123 | UserName=Fred Smith | Login=fred128@gmail.com }</msg>
+<status status="PASS" endtime="20160404 01:38:10.910" starttime="20160404 01:38:10.909"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>btSignupSubmitButton</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:10.950" starttime="20160404 01:38:10.910"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>btSignupSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:38:10.950" level="INFO">Clicking button 'btSignupSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:38:11.314" starttime="20160404 01:38:10.950"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:16.337" starttime="20160404 01:38:11.314"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:16.368" starttime="20160404 01:38:16.337"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is New User: &amp;{NEW_USER_1}[UserName]</arg>
+</arguments>
+<msg timestamp="20160404 01:38:16.368" level="INFO">This is New User: Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:38:16.368" starttime="20160404 01:38:16.368"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{NEW_USER_1}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:16.368" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:16.368" starttime="20160404 01:38:16.368"></status>
+</kw>
+<msg timestamp="20160404 01:38:16.368" level="INFO">&amp;{NEW_USER_1} = { Email=fred128@gmail.com | Firstname=Fred | LastName=Smith | Password=Smith123 | UserName=Fred Smith | Login=fred128@gmail.com }</msg>
+<status status="PASS" endtime="20160404 01:38:16.368" starttime="20160404 01:38:09.757"></status>
+</kw>
+<kw name="Get system status" library="Common">
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>REQUEST OF SYSTEM</arg>
+<arg>STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:16.368" starttime="20160404 01:38:16.368"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:21.402" starttime="20160404 01:38:16.368"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:21.433" starttime="20160404 01:38:21.402"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:21.464" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:21.464" starttime="20160404 01:38:21.433"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:21.464" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:38:21.464" starttime="20160404 01:38:21.464"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${result}' &gt;= '${STATUS_3}' or '${result}' &gt;= '${STATUS_4}'</arg>
+<arg>Logged</arg>
+<arg>Open for LogIn</arg>
+</arguments>
+<assign>
+<var>${LoginStatus}</var>
+</assign>
+<msg timestamp="20160404 01:38:21.464" level="INFO">${LoginStatus} = Open for LogIn</msg>
+<status status="PASS" endtime="20160404 01:38:21.464" starttime="20160404 01:38:21.464"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Logged'</arg>
+<arg>Get User Name</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>System</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>System</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:21.464" starttime="20160404 01:38:21.464"></status>
+</kw>
+<msg timestamp="20160404 01:38:21.464" level="INFO">${STATUS_NAME} = System</msg>
+<status status="PASS" endtime="20160404 01:38:21.464" starttime="20160404 01:38:21.464"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Open for LogIn'</arg>
+<arg>Check if suggestion present</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<kw name="Check if suggestion present" library="Common">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<msg timestamp="20160404 01:38:21.480" level="INFO">Verifying element 'css=#cphMain_msg_divError' is visible.</msg>
+<status status="PASS" endtime="20160404 01:38:21.511" starttime="20160404 01:38:21.480"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<msg timestamp="20160404 01:38:21.542" level="INFO">${StatusSuggestion} = User with that email already exists.</msg>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.511"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${StatusSuggestion}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:21.542" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.542"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.480"></status>
+</kw>
+<msg timestamp="20160404 01:38:21.542" level="INFO">${StatusSuggestion} = User with that email already exists.</msg>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.464"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Subject=${STATUS_NAME}</arg>
+<arg>Status=${LoginStatus}</arg>
+<arg>Suggestion=${StatusSuggestion}</arg>
+</arguments>
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<msg timestamp="20160404 01:38:21.542" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=User with that email already exists. }</msg>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.542"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{SystemStatus}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:21.542" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.542"></status>
+</kw>
+<msg timestamp="20160404 01:38:21.542" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=User with that email already exists. }</msg>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:16.368"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'&amp;{SystemStatus}[Status]' == 'Logged'</arg>
+<arg>Log</arg>
+<arg>New User: &amp;{SystemStatus}[Subject] Logged</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:21.542" starttime="20160404 01:38:21.542"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'&amp;{SystemStatus}[Status]' == 'Open for LogIn'</arg>
+<arg>Login with credentials</arg>
+<arg>&amp;{NEW_USER_1}[Login]</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<kw name="Login with credentials" library="Common">
+<arguments>
+<arg>&amp;{NEW_USER_1}[Login]</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=#ctl34_aLogin</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:21.574" starttime="20160404 01:38:21.542"></status>
+</kw>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 01:38:21.574" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 01:38:21.857" starttime="20160404 01:38:21.574"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:21.878" starttime="20160404 01:38:21.857"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:21.879" level="INFO">Typing text 'fred128@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 01:38:22.032" starttime="20160404 01:38:21.879"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:22.033" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 01:38:22.160" starttime="20160404 01:38:22.032"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 01:38:22.160" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 01:38:22.254" starttime="20160404 01:38:22.160"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:38:22.255" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:38:22.712" starttime="20160404 01:38:22.255"></status>
+</kw>
+<kw name="Then wait until page does not contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:27.771" starttime="20160404 01:38:22.712"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:27.771" starttime="20160404 01:38:21.542"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:27.771" starttime="20160404 01:38:21.542"></status>
+</kw>
+<kw name="Get system status" library="Common">
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>REQUEST OF SYSTEM</arg>
+<arg>STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:27.771" starttime="20160404 01:38:27.771"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:32.832" starttime="20160404 01:38:27.771"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:32.850" starttime="20160404 01:38:32.833"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:32.882" level="INFO">${element_text} = Welcome, Fred Smith | Logout
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:32.882" starttime="20160404 01:38:32.850"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:32.882" level="INFO">${result} = Welcome, Fred Smith | Logout</msg>
+<status status="PASS" endtime="20160404 01:38:32.882" starttime="20160404 01:38:32.882"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${result}' &gt;= '${STATUS_3}' or '${result}' &gt;= '${STATUS_4}'</arg>
+<arg>Logged</arg>
+<arg>Open for LogIn</arg>
+</arguments>
+<assign>
+<var>${LoginStatus}</var>
+</assign>
+<msg timestamp="20160404 01:38:32.882" level="INFO">${LoginStatus} = Logged</msg>
+<status status="PASS" endtime="20160404 01:38:32.882" starttime="20160404 01:38:32.882"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Logged'</arg>
+<arg>Get User Name</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>System</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<kw name="Get User Name" library="Common">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:38:32.929" level="INFO">${STATUS_NAME} = Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.882"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${STATUS_NAME}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:32.929" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.929"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.882"></status>
+</kw>
+<msg timestamp="20160404 01:38:32.929" level="INFO">${STATUS_NAME} = Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.882"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Open for LogIn'</arg>
+<arg>Check if suggestion present</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<msg timestamp="20160404 01:38:32.929" level="INFO">${StatusSuggestion} = None</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.929"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Subject=${STATUS_NAME}</arg>
+<arg>Status=${LoginStatus}</arg>
+<arg>Suggestion=${StatusSuggestion}</arg>
+</arguments>
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<msg timestamp="20160404 01:38:32.929" level="INFO">&amp;{SystemStatus} = { Subject=Fred Smith | Status=Logged | Suggestion=None }</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.929"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{SystemStatus}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:32.929" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:32.929"></status>
+</kw>
+<msg timestamp="20160404 01:38:32.929" level="INFO">&amp;{SystemStatus} = { Subject=Fred Smith | Status=Logged | Suggestion=None }</msg>
+<status status="PASS" endtime="20160404 01:38:32.929" starttime="20160404 01:38:27.771"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 01:38:34.060" starttime="20160404 01:38:32.929"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:34.060" starttime="20160404 01:38:32.929"></status>
+</kw>
+<tags>
+<tag>DEBUG 07.11</tag>
+</tags>
+<status status="PASS" endtime="20160404 01:38:34.060" critical="yes" starttime="20160404 01:37:52.457"></status>
+</test>
+<test id="s1-t2" name="User cannot log in with bad password">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:34.060" level="INFO">Opening browser 'chrome' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 01:38:40.522" starttime="20160404 01:38:34.060"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 01:38:40.685" starttime="20160404 01:38:40.522"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:40.713" starttime="20160404 01:38:40.685"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:40.713" starttime="20160404 01:38:40.713"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:40.761" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:40.761" starttime="20160404 01:38:40.713"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:40.762" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:38:40.762" starttime="20160404 01:38:40.762"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:40.762" starttime="20160404 01:38:40.762"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 01:38:40.764" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 01:38:41.417" starttime="20160404 01:38:40.764"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:41.441" starttime="20160404 01:38:41.417"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:41.442" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 01:38:41.575" starttime="20160404 01:38:41.442"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:41.576" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 01:38:41.773" starttime="20160404 01:38:41.576"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 01:38:41.775" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 01:38:41.893" starttime="20160404 01:38:41.774"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:38:41.893" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:38:46.388" starttime="20160404 01:38:41.893"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:46.470" starttime="20160404 01:38:46.389"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:46.471" starttime="20160404 01:38:40.764"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:46.471" starttime="20160404 01:38:40.762"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:38:46.523" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 01:38:46.523" starttime="20160404 01:38:46.471"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:46.525" starttime="20160404 01:38:46.524"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:46.525" starttime="20160404 01:38:34.060"></status>
+</kw>
+<kw name="Logout to start conditions">
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=#ctl34_aLogout</arg>
+</arguments>
+<msg timestamp="20160404 01:38:46.525" level="INFO">Clicking link 'css=#ctl34_aLogout'.</msg>
+<status status="PASS" endtime="20160404 01:38:47.852" starttime="20160404 01:38:46.525"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:47.853" starttime="20160404 01:38:47.852"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>request</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:47.854" level="INFO">${element_text} = request</msg>
+<status status="PASS" endtime="20160404 01:38:47.854" starttime="20160404 01:38:47.853"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:47.987" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:47.987" starttime="20160404 01:38:47.854"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:47.987" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:38:47.988" starttime="20160404 01:38:47.987"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>comment</arg>
+<arg>Ok for Start</arg>
+</arguments>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Ok for Start</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:47.989" starttime="20160404 01:38:47.989"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:47.989" starttime="20160404 01:38:47.988"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:47.989" starttime="20160404 01:38:46.525"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create Valid User</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:47.990" starttime="20160404 01:38:47.990"></status>
+</kw>
+<kw name="Create valid user">
+<arguments>
+<arg>&amp;{NEW_USER_1}[Email]</arg>
+<arg>&amp;{NEW_USER_1}[Firstname]</arg>
+<arg>&amp;{NEW_USER_1}[LastName]</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<assign>
+<var>&amp;{NEW_USER_1}</var>
+</assign>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>xpath=.//*[@id='ctl34_aSignup']</arg>
+</arguments>
+<msg timestamp="20160404 01:38:47.992" level="INFO">Clicking link 'xpath=.//*[@id='ctl34_aSignup']'.</msg>
+<status status="PASS" endtime="20160404 01:38:48.282" starttime="20160404 01:38:47.992"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbEmail']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:48.305" starttime="20160404 01:38:48.282"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbEmail']</arg>
+<arg>${NewEmail}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:48.306" level="INFO">Typing text 'fred128@gmail.com' into text field 'xpath=.//*[@id='cphMain_tbEmail']'</msg>
+<status status="PASS" endtime="20160404 01:38:48.429" starttime="20160404 01:38:48.305"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbFirstName']</arg>
+<arg>${NewFirstName}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:48.431" level="INFO">Typing text 'Fred' into text field 'xpath=.//*[@id='cphMain_tbFirstName']'</msg>
+<status status="PASS" endtime="20160404 01:38:48.577" starttime="20160404 01:38:48.429"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbLastName']</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:48.577" level="INFO">Typing text 'Smith' into text field 'xpath=.//*[@id='cphMain_tbLastName']'</msg>
+<status status="PASS" endtime="20160404 01:38:48.700" starttime="20160404 01:38:48.577"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbPassword']</arg>
+<arg>${NewPassword}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:48.701" level="INFO">Typing text 'Smith123' into text field 'xpath=.//*[@id='cphMain_tbPassword']'</msg>
+<status status="PASS" endtime="20160404 01:38:48.863" starttime="20160404 01:38:48.701"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbConfirmPassword']</arg>
+<arg>${NewPassword}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:48.866" level="INFO">Typing text 'Smith123' into text field 'xpath=.//*[@id='cphMain_tbConfirmPassword']'</msg>
+<status status="PASS" endtime="20160404 01:38:48.986" starttime="20160404 01:38:48.864"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create for new User:</arg>
+<arg>UserName, login, and</arg>
+<arg>Password</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:48.987" starttime="20160404 01:38:48.986"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${NewFirstname}</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<assign>
+<var>${USER_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:38:48.988" level="INFO">${USER_NAME} = Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:38:48.988" starttime="20160404 01:38:48.987"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NewEmail}</arg>
+</arguments>
+<assign>
+<var>${LOGIN}</var>
+</assign>
+<msg timestamp="20160404 01:38:48.989" level="INFO">${LOGIN} = fred128@gmail.com</msg>
+<status status="PASS" endtime="20160404 01:38:48.989" starttime="20160404 01:38:48.989"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NewPassword}</arg>
+</arguments>
+<assign>
+<var>${PASSWORD}</var>
+</assign>
+<msg timestamp="20160404 01:38:48.990" level="INFO">${PASSWORD} = Smith123</msg>
+<status status="PASS" endtime="20160404 01:38:48.990" starttime="20160404 01:38:48.989"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>&amp;{NEW_USER_1}</arg>
+<arg>UserName=${USER_NAME}</arg>
+<arg>Login=${LOGIN}</arg>
+</arguments>
+<assign>
+<var>&amp;{NEW_USER_1}</var>
+</assign>
+<msg timestamp="20160404 01:38:48.992" level="INFO">&amp;{NEW_USER_1} = { Email=fred128@gmail.com | Firstname=Fred | LastName=Smith | Password=Smith123 | UserName=Fred Smith | Login=fred128@gmail.com }</msg>
+<status status="PASS" endtime="20160404 01:38:48.993" starttime="20160404 01:38:48.990"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>btSignupSubmitButton</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:49.027" starttime="20160404 01:38:48.993"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>btSignupSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:38:49.027" level="INFO">Clicking button 'btSignupSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:38:49.334" starttime="20160404 01:38:49.027"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:54.380" starttime="20160404 01:38:49.335"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:54.412" starttime="20160404 01:38:54.380"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is New User: &amp;{NEW_USER_1}[UserName]</arg>
+</arguments>
+<msg timestamp="20160404 01:38:54.412" level="INFO">This is New User: Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:38:54.412" starttime="20160404 01:38:54.412"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{NEW_USER_1}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:54.412" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:54.412" starttime="20160404 01:38:54.412"></status>
+</kw>
+<msg timestamp="20160404 01:38:54.412" level="INFO">&amp;{NEW_USER_1} = { Email=fred128@gmail.com | Firstname=Fred | LastName=Smith | Password=Smith123 | UserName=Fred Smith | Login=fred128@gmail.com }</msg>
+<status status="PASS" endtime="20160404 01:38:54.412" starttime="20160404 01:38:47.991"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>CHANGE CREATED PASSWORD UPON BAD_PASSWORD</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:54.412" starttime="20160404 01:38:54.412"></status>
+</kw>
+<kw name="Get system status" library="Common">
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>REQUEST OF SYSTEM</arg>
+<arg>STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:54.412" starttime="20160404 01:38:54.412"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:59.428" starttime="20160404 01:38:54.412"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:59.460" starttime="20160404 01:38:59.428"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:38:59.491" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:38:59.491" starttime="20160404 01:38:59.460"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:38:59.491" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:38:59.506" starttime="20160404 01:38:59.491"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${result}' &gt;= '${STATUS_3}' or '${result}' &gt;= '${STATUS_4}'</arg>
+<arg>Logged</arg>
+<arg>Open for LogIn</arg>
+</arguments>
+<assign>
+<var>${LoginStatus}</var>
+</assign>
+<msg timestamp="20160404 01:38:59.506" level="INFO">${LoginStatus} = Open for LogIn</msg>
+<status status="PASS" endtime="20160404 01:38:59.506" starttime="20160404 01:38:59.506"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Logged'</arg>
+<arg>Get User Name</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>System</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>System</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:59.506" starttime="20160404 01:38:59.506"></status>
+</kw>
+<msg timestamp="20160404 01:38:59.506" level="INFO">${STATUS_NAME} = System</msg>
+<status status="PASS" endtime="20160404 01:38:59.506" starttime="20160404 01:38:59.506"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Open for LogIn'</arg>
+<arg>Check if suggestion present</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<kw name="Check if suggestion present" library="Common">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<msg timestamp="20160404 01:38:59.506" level="INFO">Verifying element 'css=#cphMain_msg_divError' is visible.</msg>
+<status status="PASS" endtime="20160404 01:38:59.538" starttime="20160404 01:38:59.506"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<msg timestamp="20160404 01:38:59.569" level="INFO">${StatusSuggestion} = User with that email already exists.</msg>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:59.538"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${StatusSuggestion}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:59.569" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:59.569"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:59.506"></status>
+</kw>
+<msg timestamp="20160404 01:38:59.569" level="INFO">${StatusSuggestion} = User with that email already exists.</msg>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:59.506"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Subject=${STATUS_NAME}</arg>
+<arg>Status=${LoginStatus}</arg>
+<arg>Suggestion=${StatusSuggestion}</arg>
+</arguments>
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<msg timestamp="20160404 01:38:59.569" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=User with that email already exists. }</msg>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:59.569"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{SystemStatus}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:59.569" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:59.569"></status>
+</kw>
+<msg timestamp="20160404 01:38:59.569" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=User with that email already exists. }</msg>
+<status status="PASS" endtime="20160404 01:38:59.569" starttime="20160404 01:38:54.412"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'&amp;{SystemStatus}[Status]' == 'Logged'</arg>
+<arg>Log</arg>
+<arg>New User: &amp;{SystemStatus}[Subject] Logged</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:59.585" starttime="20160404 01:38:59.569"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'&amp;{SystemStatus}[Status]' == 'Open for LogIn'</arg>
+<arg>Login with credentials</arg>
+<arg>&amp;{NEW_USER_1}[Login]</arg>
+<arg>${Bad_Password}</arg>
+</arguments>
+<kw name="Login with credentials" library="Common">
+<arguments>
+<arg>&amp;{NEW_USER_1}[Login]</arg>
+<arg>${Bad_Password}</arg>
+</arguments>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=#ctl34_aLogin</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:59.600" starttime="20160404 01:38:59.585"></status>
+</kw>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 01:38:59.600" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 01:38:59.898" starttime="20160404 01:38:59.600"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:38:59.927" starttime="20160404 01:38:59.898"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 01:38:59.928" level="INFO">Typing text 'fred128@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 01:39:00.066" starttime="20160404 01:38:59.928"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:00.067" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 01:39:00.203" starttime="20160404 01:39:00.066"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 01:39:00.204" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 01:39:00.296" starttime="20160404 01:39:00.203"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:39:00.298" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:39:00.606" starttime="20160404 01:39:00.297"></status>
+</kw>
+<kw name="Then wait until page does not contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:05.659" starttime="20160404 01:39:00.606"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:05.659" starttime="20160404 01:38:59.585"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:05.659" starttime="20160404 01:38:59.585"></status>
+</kw>
+<kw name="Get system status" library="Common">
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>REQUEST OF SYSTEM</arg>
+<arg>STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:05.659" starttime="20160404 01:39:05.659"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:10.691" starttime="20160404 01:39:05.659"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:10.722" starttime="20160404 01:39:10.691"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:39:10.753" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:39:10.753" starttime="20160404 01:39:10.722"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:39:10.753" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:39:10.753" starttime="20160404 01:39:10.753"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${result}' &gt;= '${STATUS_3}' or '${result}' &gt;= '${STATUS_4}'</arg>
+<arg>Logged</arg>
+<arg>Open for LogIn</arg>
+</arguments>
+<assign>
+<var>${LoginStatus}</var>
+</assign>
+<msg timestamp="20160404 01:39:10.753" level="INFO">${LoginStatus} = Open for LogIn</msg>
+<status status="PASS" endtime="20160404 01:39:10.753" starttime="20160404 01:39:10.753"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Logged'</arg>
+<arg>Get User Name</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>System</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>System</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:10.753" starttime="20160404 01:39:10.753"></status>
+</kw>
+<msg timestamp="20160404 01:39:10.753" level="INFO">${STATUS_NAME} = System</msg>
+<status status="PASS" endtime="20160404 01:39:10.753" starttime="20160404 01:39:10.753"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Open for LogIn'</arg>
+<arg>Check if suggestion present</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<kw name="Check if suggestion present" library="Common">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<msg timestamp="20160404 01:39:10.753" level="INFO">Verifying element 'css=#cphMain_msg_divError' is visible.</msg>
+<status status="PASS" endtime="20160404 01:39:10.769" starttime="20160404 01:39:10.753"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<msg timestamp="20160404 01:39:10.800" level="INFO">${StatusSuggestion} = Incorrect login or password</msg>
+<status status="PASS" endtime="20160404 01:39:10.800" starttime="20160404 01:39:10.769"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${StatusSuggestion}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:10.800" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:10.800" starttime="20160404 01:39:10.800"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:10.800" starttime="20160404 01:39:10.753"></status>
+</kw>
+<msg timestamp="20160404 01:39:10.800" level="INFO">${StatusSuggestion} = Incorrect login or password</msg>
+<status status="PASS" endtime="20160404 01:39:10.800" starttime="20160404 01:39:10.753"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Subject=${STATUS_NAME}</arg>
+<arg>Status=${LoginStatus}</arg>
+<arg>Suggestion=${StatusSuggestion}</arg>
+</arguments>
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<msg timestamp="20160404 01:39:10.800" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=Incorrect login or password }</msg>
+<status status="PASS" endtime="20160404 01:39:10.800" starttime="20160404 01:39:10.800"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{SystemStatus}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:10.800" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:10.800" starttime="20160404 01:39:10.800"></status>
+</kw>
+<msg timestamp="20160404 01:39:10.816" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=Incorrect login or password }</msg>
+<status status="PASS" endtime="20160404 01:39:10.816" starttime="20160404 01:39:05.659"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 01:39:11.941" starttime="20160404 01:39:10.816"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:11.941" starttime="20160404 01:39:10.816"></status>
+</kw>
+<tags>
+<tag>DEBUG 07.12</tag>
+</tags>
+<status status="PASS" endtime="20160404 01:39:11.941" critical="yes" starttime="20160404 01:38:34.060"></status>
+</test>
+<test id="s1-t3" name="User cannot log in with bad LOGIN">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:11.941" level="INFO">Opening browser 'chrome' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 01:39:18.020" starttime="20160404 01:39:11.941"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 01:39:18.217" starttime="20160404 01:39:18.021"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:18.238" starttime="20160404 01:39:18.218"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:18.239" starttime="20160404 01:39:18.238"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:39:18.283" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:39:18.284" starttime="20160404 01:39:18.239"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:39:18.284" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:39:18.284" starttime="20160404 01:39:18.284"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:18.284" starttime="20160404 01:39:18.284"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 01:39:18.287" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 01:39:18.938" starttime="20160404 01:39:18.287"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:18.968" starttime="20160404 01:39:18.939"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:18.969" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 01:39:19.131" starttime="20160404 01:39:18.968"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:19.132" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 01:39:19.250" starttime="20160404 01:39:19.132"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 01:39:19.251" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 01:39:19.354" starttime="20160404 01:39:19.251"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:39:19.355" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:39:23.333" starttime="20160404 01:39:19.354"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:23.445" starttime="20160404 01:39:23.333"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:23.445" starttime="20160404 01:39:18.287"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:23.445" starttime="20160404 01:39:18.285"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:39:23.533" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 01:39:23.533" starttime="20160404 01:39:23.446"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:23.537" starttime="20160404 01:39:23.534"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:23.537" starttime="20160404 01:39:11.941"></status>
+</kw>
+<kw name="Logout to start conditions">
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=#ctl34_aLogout</arg>
+</arguments>
+<msg timestamp="20160404 01:39:23.539" level="INFO">Clicking link 'css=#ctl34_aLogout'.</msg>
+<status status="PASS" endtime="20160404 01:39:24.897" starttime="20160404 01:39:23.539"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:24.897" starttime="20160404 01:39:24.897"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>request</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:39:24.898" level="INFO">${element_text} = request</msg>
+<status status="PASS" endtime="20160404 01:39:24.898" starttime="20160404 01:39:24.898"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:39:25.087" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:39:25.087" starttime="20160404 01:39:24.898"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:39:25.087" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:39:25.087" starttime="20160404 01:39:25.087"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>comment</arg>
+<arg>Ok for Start</arg>
+</arguments>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Ok for Start</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:25.090" starttime="20160404 01:39:25.089"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:25.090" starttime="20160404 01:39:25.088"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:25.090" starttime="20160404 01:39:23.538"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create Valid User</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:25.091" starttime="20160404 01:39:25.090"></status>
+</kw>
+<kw name="Create valid user">
+<arguments>
+<arg>&amp;{NEW_USER_1}[Email]</arg>
+<arg>&amp;{NEW_USER_1}[Firstname]</arg>
+<arg>&amp;{NEW_USER_1}[LastName]</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<assign>
+<var>&amp;{NEW_USER_1}</var>
+</assign>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>xpath=.//*[@id='ctl34_aSignup']</arg>
+</arguments>
+<msg timestamp="20160404 01:39:25.092" level="INFO">Clicking link 'xpath=.//*[@id='ctl34_aSignup']'.</msg>
+<status status="PASS" endtime="20160404 01:39:25.394" starttime="20160404 01:39:25.092"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbEmail']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:25.416" starttime="20160404 01:39:25.394"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbEmail']</arg>
+<arg>${NewEmail}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:25.417" level="INFO">Typing text 'fred128@gmail.com' into text field 'xpath=.//*[@id='cphMain_tbEmail']'</msg>
+<status status="PASS" endtime="20160404 01:39:25.547" starttime="20160404 01:39:25.416"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbFirstName']</arg>
+<arg>${NewFirstName}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:25.548" level="INFO">Typing text 'Fred' into text field 'xpath=.//*[@id='cphMain_tbFirstName']'</msg>
+<status status="PASS" endtime="20160404 01:39:25.729" starttime="20160404 01:39:25.548"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbLastName']</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:25.730" level="INFO">Typing text 'Smith' into text field 'xpath=.//*[@id='cphMain_tbLastName']'</msg>
+<status status="PASS" endtime="20160404 01:39:25.888" starttime="20160404 01:39:25.729"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbPassword']</arg>
+<arg>${NewPassword}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:25.890" level="INFO">Typing text 'Smith123' into text field 'xpath=.//*[@id='cphMain_tbPassword']'</msg>
+<status status="PASS" endtime="20160404 01:39:26.024" starttime="20160404 01:39:25.889"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_tbConfirmPassword']</arg>
+<arg>${NewPassword}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:26.025" level="INFO">Typing text 'Smith123' into text field 'xpath=.//*[@id='cphMain_tbConfirmPassword']'</msg>
+<status status="PASS" endtime="20160404 01:39:26.155" starttime="20160404 01:39:26.024"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Create for new User:</arg>
+<arg>UserName, login, and</arg>
+<arg>Password</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:26.157" starttime="20160404 01:39:26.156"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${NewFirstname}</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<assign>
+<var>${USER_NAME}</var>
+</assign>
+<msg timestamp="20160404 01:39:26.157" level="INFO">${USER_NAME} = Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:39:26.158" starttime="20160404 01:39:26.157"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NewEmail}</arg>
+</arguments>
+<assign>
+<var>${LOGIN}</var>
+</assign>
+<msg timestamp="20160404 01:39:26.158" level="INFO">${LOGIN} = fred128@gmail.com</msg>
+<status status="PASS" endtime="20160404 01:39:26.159" starttime="20160404 01:39:26.158"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NewPassword}</arg>
+</arguments>
+<assign>
+<var>${PASSWORD}</var>
+</assign>
+<msg timestamp="20160404 01:39:26.160" level="INFO">${PASSWORD} = Smith123</msg>
+<status status="PASS" endtime="20160404 01:39:26.160" starttime="20160404 01:39:26.159"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>&amp;{NEW_USER_1}</arg>
+<arg>UserName=${USER_NAME}</arg>
+<arg>Login=${LOGIN}</arg>
+</arguments>
+<assign>
+<var>&amp;{NEW_USER_1}</var>
+</assign>
+<msg timestamp="20160404 01:39:26.161" level="INFO">&amp;{NEW_USER_1} = { Email=fred128@gmail.com | Firstname=Fred | LastName=Smith | Password=Smith123 | UserName=Fred Smith | Login=fred128@gmail.com }</msg>
+<status status="PASS" endtime="20160404 01:39:26.161" starttime="20160404 01:39:26.160"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>btSignupSubmitButton</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:26.198" starttime="20160404 01:39:26.161"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>btSignupSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:39:26.199" level="INFO">Clicking button 'btSignupSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:39:26.521" starttime="20160404 01:39:26.198"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:31.554" starttime="20160404 01:39:26.521"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:31.570" starttime="20160404 01:39:31.554"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>This is New User: &amp;{NEW_USER_1}[UserName]</arg>
+</arguments>
+<msg timestamp="20160404 01:39:31.570" level="INFO">This is New User: Fred Smith</msg>
+<status status="PASS" endtime="20160404 01:39:31.570" starttime="20160404 01:39:31.570"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{NEW_USER_1}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:31.570" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:31.570" starttime="20160404 01:39:31.570"></status>
+</kw>
+<msg timestamp="20160404 01:39:31.570" level="INFO">&amp;{NEW_USER_1} = { Email=fred128@gmail.com | Firstname=Fred | LastName=Smith | Password=Smith123 | UserName=Fred Smith | Login=fred128@gmail.com }</msg>
+<status status="PASS" endtime="20160404 01:39:31.570" starttime="20160404 01:39:25.091"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>CHANGE CREATED LOGIN UPON BAD_LOGIN</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:31.570" starttime="20160404 01:39:31.570"></status>
+</kw>
+<kw name="Get system status" library="Common">
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>REQUEST OF SYSTEM</arg>
+<arg>STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:31.585" starttime="20160404 01:39:31.585"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:36.619" starttime="20160404 01:39:31.585"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:36.650" starttime="20160404 01:39:36.619"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:39:36.681" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:39:36.681" starttime="20160404 01:39:36.650"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:39:36.681" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:39:36.681" starttime="20160404 01:39:36.681"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${result}' &gt;= '${STATUS_3}' or '${result}' &gt;= '${STATUS_4}'</arg>
+<arg>Logged</arg>
+<arg>Open for LogIn</arg>
+</arguments>
+<assign>
+<var>${LoginStatus}</var>
+</assign>
+<msg timestamp="20160404 01:39:36.681" level="INFO">${LoginStatus} = Open for LogIn</msg>
+<status status="PASS" endtime="20160404 01:39:36.681" starttime="20160404 01:39:36.681"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Logged'</arg>
+<arg>Get User Name</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>System</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>System</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:36.681" starttime="20160404 01:39:36.681"></status>
+</kw>
+<msg timestamp="20160404 01:39:36.681" level="INFO">${STATUS_NAME} = System</msg>
+<status status="PASS" endtime="20160404 01:39:36.681" starttime="20160404 01:39:36.681"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Open for LogIn'</arg>
+<arg>Check if suggestion present</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<kw name="Check if suggestion present" library="Common">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<msg timestamp="20160404 01:39:36.681" level="INFO">Verifying element 'css=#cphMain_msg_divError' is visible.</msg>
+<status status="PASS" endtime="20160404 01:39:36.712" starttime="20160404 01:39:36.681"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<msg timestamp="20160404 01:39:36.743" level="INFO">${StatusSuggestion} = User with that email already exists.</msg>
+<status status="PASS" endtime="20160404 01:39:36.743" starttime="20160404 01:39:36.712"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${StatusSuggestion}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:36.759" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:36.743"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:36.681"></status>
+</kw>
+<msg timestamp="20160404 01:39:36.759" level="INFO">${StatusSuggestion} = User with that email already exists.</msg>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:36.681"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Subject=${STATUS_NAME}</arg>
+<arg>Status=${LoginStatus}</arg>
+<arg>Suggestion=${StatusSuggestion}</arg>
+</arguments>
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<msg timestamp="20160404 01:39:36.759" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=User with that email already exists. }</msg>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:36.759"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{SystemStatus}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:36.759" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:36.759"></status>
+</kw>
+<msg timestamp="20160404 01:39:36.759" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=User with that email already exists. }</msg>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:31.570"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'&amp;{SystemStatus}[Status]' == 'Logged'</arg>
+<arg>Log</arg>
+<arg>New User: &amp;{SystemStatus}[Subject] Logged</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:36.759" starttime="20160404 01:39:36.759"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'&amp;{SystemStatus}[Status]' == 'Open for LogIn'</arg>
+<arg>Login with credentials</arg>
+<arg>${Bad_Login}</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<kw name="Login with credentials" library="Common">
+<arguments>
+<arg>${Bad_Login}</arg>
+<arg>&amp;{NEW_USER_1}[Password]</arg>
+</arguments>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=#ctl34_aLogin</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:36.775" starttime="20160404 01:39:36.759"></status>
+</kw>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 01:39:36.775" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 01:39:37.076" starttime="20160404 01:39:36.775"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:37.098" starttime="20160404 01:39:37.076"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:37.098" level="INFO">Typing text '123456@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 01:39:37.237" starttime="20160404 01:39:37.098"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:37.238" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 01:39:37.367" starttime="20160404 01:39:37.238"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 01:39:37.368" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 01:39:37.462" starttime="20160404 01:39:37.367"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 01:39:37.462" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 01:39:37.790" starttime="20160404 01:39:37.462"></status>
+</kw>
+<kw name="Then wait until page does not contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:42.849" starttime="20160404 01:39:37.791"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:42.849" starttime="20160404 01:39:36.759"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:42.849" starttime="20160404 01:39:36.759"></status>
+</kw>
+<kw name="Get system status" library="Common">
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>REQUEST OF SYSTEM</arg>
+<arg>STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:42.849" starttime="20160404 01:39:42.849"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:47.867" starttime="20160404 01:39:42.849"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:47.898" starttime="20160404 01:39:47.867"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 01:39:47.929" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 01:39:47.929" starttime="20160404 01:39:47.898"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 01:39:47.929" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 01:39:47.929" starttime="20160404 01:39:47.929"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${result}' &gt;= '${STATUS_3}' or '${result}' &gt;= '${STATUS_4}'</arg>
+<arg>Logged</arg>
+<arg>Open for LogIn</arg>
+</arguments>
+<assign>
+<var>${LoginStatus}</var>
+</assign>
+<msg timestamp="20160404 01:39:47.929" level="INFO">${LoginStatus} = Open for LogIn</msg>
+<status status="PASS" endtime="20160404 01:39:47.929" starttime="20160404 01:39:47.929"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Logged'</arg>
+<arg>Get User Name</arg>
+<arg>ELSE</arg>
+<arg>set variable</arg>
+<arg>System</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>System</arg>
+</arguments>
+<status status="PASS" endtime="20160404 01:39:47.929" starttime="20160404 01:39:47.929"></status>
+</kw>
+<msg timestamp="20160404 01:39:47.929" level="INFO">${STATUS_NAME} = System</msg>
+<status status="PASS" endtime="20160404 01:39:47.929" starttime="20160404 01:39:47.929"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${LoginStatus}' == 'Open for LogIn'</arg>
+<arg>Check if suggestion present</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<kw name="Check if suggestion present" library="Common">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<msg timestamp="20160404 01:39:47.929" level="INFO">Verifying element 'css=#cphMain_msg_divError' is visible.</msg>
+<status status="PASS" endtime="20160404 01:39:47.961" starttime="20160404 01:39:47.929"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#cphMain_msg_divError</arg>
+</arguments>
+<assign>
+<var>${StatusSuggestion}</var>
+</assign>
+<msg timestamp="20160404 01:39:47.976" level="INFO">${StatusSuggestion} = Incorrect login or password</msg>
+<status status="PASS" endtime="20160404 01:39:47.976" starttime="20160404 01:39:47.961"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${StatusSuggestion}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:47.976" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:47.976" starttime="20160404 01:39:47.976"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:47.976" starttime="20160404 01:39:47.929"></status>
+</kw>
+<msg timestamp="20160404 01:39:47.976" level="INFO">${StatusSuggestion} = Incorrect login or password</msg>
+<status status="PASS" endtime="20160404 01:39:47.976" starttime="20160404 01:39:47.929"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Subject=${STATUS_NAME}</arg>
+<arg>Status=${LoginStatus}</arg>
+<arg>Suggestion=${StatusSuggestion}</arg>
+</arguments>
+<assign>
+<var>&amp;{SystemStatus}</var>
+</assign>
+<msg timestamp="20160404 01:39:47.992" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=Incorrect login or password }</msg>
+<status status="PASS" endtime="20160404 01:39:47.992" starttime="20160404 01:39:47.976"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>&amp;{SystemStatus}</arg>
+</arguments>
+<msg timestamp="20160404 01:39:47.992" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20160404 01:39:47.992" starttime="20160404 01:39:47.992"></status>
+</kw>
+<msg timestamp="20160404 01:39:47.992" level="INFO">&amp;{SystemStatus} = { Subject=System | Status=Open for LogIn | Suggestion=Incorrect login or password }</msg>
+<status status="PASS" endtime="20160404 01:39:47.992" starttime="20160404 01:39:42.849"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 01:39:49.124" starttime="20160404 01:39:47.992"></status>
+</kw>
+<status status="PASS" endtime="20160404 01:39:49.124" starttime="20160404 01:39:47.992"></status>
+</kw>
+<tags>
+<tag>DEBUG 07.13</tag>
+</tags>
+<status status="PASS" endtime="20160404 01:39:49.124" critical="yes" starttime="20160404 01:39:11.941"></status>
+</test>
+<doc>Suite description: Page Login Password common logic</doc>
+<status status="PASS" endtime="20160404 01:39:49.124" starttime="20160404 01:37:52.035"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">DEBUG 07.11</stat>
+<stat fail="0" pass="1">DEBUG 07.12</stat>
+<stat fail="0" pass="1">DEBUG 07.13</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="07 LoginPassword" pass="3">07 LoginPassword</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

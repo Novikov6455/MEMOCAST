@@ -1,0 +1,4051 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160404 02:09:56.818" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="C:\development\memocast-test\tests\06_MyProfile.robot" id="s1" name="06 MyProfile">
+<test id="s1-t1" name="Page My_Profile should contains">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:09:58.235" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:10:27.673" starttime="20160404 02:09:58.235"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:10:28.435" starttime="20160404 02:10:27.674"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:10:29.164" starttime="20160404 02:10:28.436"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:10:29.165" starttime="20160404 02:10:29.165"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:10:31.607" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:10:31.608" starttime="20160404 02:10:29.166"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:10:31.609" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:10:31.609" starttime="20160404 02:10:31.608"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:10:31.610" starttime="20160404 02:10:31.609"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:10:31.615" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:10:34.050" starttime="20160404 02:10:31.614"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:10:37.622" starttime="20160404 02:10:34.051"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:10:37.623" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:10:39.089" starttime="20160404 02:10:37.622"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:10:39.090" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:10:48.494" starttime="20160404 02:10:39.089"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:10:48.495" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:10:48.680" starttime="20160404 02:10:48.495"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:10:48.681" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:11:02.250" starttime="20160404 02:10:48.680"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:02.299" starttime="20160404 02:11:02.250"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:11:02.299" starttime="20160404 02:10:31.613"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:11:02.300" starttime="20160404 02:10:31.610"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:11:02.379" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:11:02.380" starttime="20160404 02:11:02.300"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:02.382" starttime="20160404 02:11:02.380"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:11:02.383" starttime="20160404 02:09:58.228"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:02.384" starttime="20160404 02:11:02.384"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:11:02.386" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:11:02.495" starttime="20160404 02:11:02.385"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:11:02.565" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:11:02.565" starttime="20160404 02:11:02.498"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:02.568" starttime="20160404 02:11:02.566"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:02.569" starttime="20160404 02:11:02.569"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:02.700" starttime="20160404 02:11:02.570"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:02.702" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:03.085" starttime="20160404 02:11:02.701"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>My Memocast Updates</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:05.684" starttime="20160404 02:11:03.086"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>My Profile Page should contains</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:05.685" starttime="20160404 02:11:05.685"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>My Profile</arg>
+</arguments>
+<msg timestamp="20160404 02:11:05.830" level="INFO">Current page contains text 'My Profile'.</msg>
+<status status="PASS" endtime="20160404 02:11:05.830" starttime="20160404 02:11:05.686"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>My Account</arg>
+</arguments>
+<msg timestamp="20160404 02:11:05.932" level="INFO">Current page contains text 'My Account'.</msg>
+<status status="PASS" endtime="20160404 02:11:05.933" starttime="20160404 02:11:05.831"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Change Password</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.022" level="INFO">Current page contains text 'Change Password'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.022" starttime="20160404 02:11:05.933"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>My Messages</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.112" level="INFO">Current page contains text 'My Messages'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.113" starttime="20160404 02:11:06.023"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Personal Settings</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.183" level="INFO">Current page contains text 'Personal Settings'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.183" starttime="20160404 02:11:06.113"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>My Playlist</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.255" level="INFO">Current page contains text 'My Playlist'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.255" starttime="20160404 02:11:06.184"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Updates</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.320" level="INFO">Current page contains text 'Updates'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.320" starttime="20160404 02:11:06.256"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Friends</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.414" level="INFO">Current page contains text 'Friends'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.414" starttime="20160404 02:11:06.321"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Messages</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.507" level="INFO">Current page contains text 'Messages'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.507" starttime="20160404 02:11:06.415"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Playlists</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.557" level="INFO">Current page contains text 'Playlists'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.557" starttime="20160404 02:11:06.508"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Subscription</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.611" level="INFO">Current page contains text 'Subscription'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.611" starttime="20160404 02:11:06.557"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Settings</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.666" level="INFO">Current page contains text 'Settings'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.666" starttime="20160404 02:11:06.612"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>About me</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.731" level="INFO">Current page contains text 'About me'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.732" starttime="20160404 02:11:06.667"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.773" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.773" starttime="20160404 02:11:06.732"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Account')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.825" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'My Account')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.826" starttime="20160404 02:11:06.774"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Change Password')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.873" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'Change Password')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.873" starttime="20160404 02:11:06.827"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Messages')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.922" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'My Messages')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.922" starttime="20160404 02:11:06.874"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Personal Settings')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:06.959" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'Personal Settings')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:06.960" starttime="20160404 02:11:06.923"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Updates')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.011" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'Updates')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.011" starttime="20160404 02:11:06.960"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Friends')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.105" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'Friends')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.106" starttime="20160404 02:11:07.012"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=(.//a[contains(normalize-space(.), 'Messages')])[last()]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.189" level="INFO">Current page contains link 'xpath=(.//a[contains(normalize-space(.), 'Messages')])[last()]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.189" starttime="20160404 02:11:07.129"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Playlists')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.295" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'Playlists')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.295" starttime="20160404 02:11:07.190"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Subscription')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.444" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'Subscription')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.445" starttime="20160404 02:11:07.296"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=(.//a[contains(normalize-space(.), 'Settings')])[last()]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.539" level="INFO">Current page contains link 'xpath=(.//a[contains(normalize-space(.), 'Settings')])[last()]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.539" starttime="20160404 02:11:07.446"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'About me')]</arg>
+</arguments>
+<msg timestamp="20160404 02:11:07.611" level="INFO">Current page contains link 'xpath=.//a[contains(normalize-space(.), 'About me')]'.</msg>
+<status status="PASS" endtime="20160404 02:11:07.611" starttime="20160404 02:11:07.540"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:11:09.230" starttime="20160404 02:11:07.613"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:11:09.230" starttime="20160404 02:11:07.612"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.01</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:11:09.238" critical="yes" starttime="20160404 02:09:58.223"></status>
+</test>
+<test id="s1-t2" name="User can see own Account options">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:11:09.246" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:11:59.007" starttime="20160404 02:11:09.246"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:11:59.389" starttime="20160404 02:11:59.008"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:59.532" starttime="20160404 02:11:59.389"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:59.532" starttime="20160404 02:11:59.532"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:11:59.684" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:11:59.684" starttime="20160404 02:11:59.533"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:11:59.686" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:11:59.686" starttime="20160404 02:11:59.684"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:11:59.687" starttime="20160404 02:11:59.687"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:11:59.696" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:12:00.506" starttime="20160404 02:11:59.695"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:01.684" starttime="20160404 02:12:00.507"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:12:01.689" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:12:03.221" starttime="20160404 02:12:01.687"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:12:03.222" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:12:03.631" starttime="20160404 02:12:03.221"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:12:03.632" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:12:04.068" starttime="20160404 02:12:03.632"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:12:04.069" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:12:11.608" starttime="20160404 02:12:04.068"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:11.754" starttime="20160404 02:12:11.609"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:11.754" starttime="20160404 02:11:59.694"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:11.754" starttime="20160404 02:11:59.688"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:12:11.877" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:12:11.877" starttime="20160404 02:12:11.755"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:11.880" starttime="20160404 02:12:11.878"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:11.880" starttime="20160404 02:11:09.242"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:11.904" starttime="20160404 02:12:11.904"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:12:11.918" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:12.096" starttime="20160404 02:12:11.918"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:12:12.242" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:12:12.242" starttime="20160404 02:12:12.097"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:12.245" starttime="20160404 02:12:12.243"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:12.247" starttime="20160404 02:12:12.246"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:12.435" starttime="20160404 02:12:12.280"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:12.436" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'</msg>
+<status status="PASS" endtime="20160404 02:12:12.604" starttime="20160404 02:12:12.436"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Account')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:12.683" starttime="20160404 02:12:12.605"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Account')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:12.863" starttime="20160404 02:12:12.684"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Account')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:12.864" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Account')]'.</msg>
+<status status="PASS" endtime="20160404 02:12:13.259" starttime="20160404 02:12:12.863"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>My Memocast Updates</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:16.457" starttime="20160404 02:12:13.259"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=(.//div[contains(normalize-space(@class), "user-av")])[*]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:16.458" level="INFO">Verifying element 'xpath=(.//div[contains(normalize-space(@class), "user-av")])[*]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:16.860" starttime="20160404 02:12:16.458"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>cphMain_cphLeft_ctl00_avatar</arg>
+</arguments>
+<msg timestamp="20160404 02:12:16.894" level="INFO">Verifying element 'cphMain_cphLeft_ctl00_avatar' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:16.991" starttime="20160404 02:12:16.893"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Updates')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:16.992" level="INFO">Verifying element 'xpath=.//a[contains(normalize-space(.), 'Updates')]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.057" starttime="20160404 02:12:16.992"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Friends')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:17.059" level="INFO">Verifying element 'xpath=.//a[contains(normalize-space(.), 'Friends')]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.145" starttime="20160404 02:12:17.058"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=(.//a[contains(normalize-space(.), 'Messages')])[last()]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:17.146" level="INFO">Verifying element 'xpath=(.//a[contains(normalize-space(.), 'Messages')])[last()]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.265" starttime="20160404 02:12:17.146"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Playlists')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:17.266" level="INFO">Verifying element 'xpath=.//a[contains(normalize-space(.), 'Playlists')]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.400" starttime="20160404 02:12:17.266"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Subscription')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:17.401" level="INFO">Verifying element 'xpath=.//a[contains(normalize-space(.), 'Subscription')]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.535" starttime="20160404 02:12:17.400"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=(.//a[contains(normalize-space(.), 'Settings')])[last()]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:17.536" level="INFO">Verifying element 'xpath=(.//a[contains(normalize-space(.), 'Settings')])[last()]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.653" starttime="20160404 02:12:17.535"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'About me')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:17.670" level="INFO">Verifying element 'xpath=.//a[contains(normalize-space(.), 'About me')]' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:17.785" starttime="20160404 02:12:17.670"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:12:19.085" starttime="20160404 02:12:17.787"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:19.085" starttime="20160404 02:12:17.786"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.10</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:12:19.085" critical="yes" starttime="20160404 02:11:09.242"></status>
+</test>
+<test id="s1-t3" name="User can Change their password">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:12:19.092" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:12:35.095" starttime="20160404 02:12:19.091"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:12:35.441" starttime="20160404 02:12:35.096"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:35.539" starttime="20160404 02:12:35.441"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:35.540" starttime="20160404 02:12:35.539"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:12:35.667" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:12:35.667" starttime="20160404 02:12:35.540"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:12:35.668" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:12:35.668" starttime="20160404 02:12:35.667"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:35.669" starttime="20160404 02:12:35.668"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:12:35.674" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:12:36.181" starttime="20160404 02:12:35.673"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:38.056" starttime="20160404 02:12:36.181"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:12:38.057" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:12:39.261" starttime="20160404 02:12:38.056"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:12:39.263" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:12:39.448" starttime="20160404 02:12:39.262"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:12:39.453" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:12:39.796" starttime="20160404 02:12:39.449"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:12:39.797" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:12:45.490" starttime="20160404 02:12:39.796"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:45.555" starttime="20160404 02:12:45.490"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:45.555" starttime="20160404 02:12:35.672"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:45.555" starttime="20160404 02:12:35.669"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:12:45.621" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:12:45.621" starttime="20160404 02:12:45.555"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:45.624" starttime="20160404 02:12:45.622"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:12:45.624" starttime="20160404 02:12:19.090"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:45.628" starttime="20160404 02:12:45.627"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:12:45.636" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:12:45.741" starttime="20160404 02:12:45.635"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:12:45.788" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:12:45.788" starttime="20160404 02:12:45.741"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:45.790" starttime="20160404 02:12:45.788"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:45.791" starttime="20160404 02:12:45.791"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:45.854" starttime="20160404 02:12:45.792"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:45.855" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:12:46.457" starttime="20160404 02:12:45.855"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:54.195" starttime="20160404 02:12:46.459"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:54.285" starttime="20160404 02:12:54.196"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:54.286" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'</msg>
+<status status="PASS" endtime="20160404 02:12:54.358" starttime="20160404 02:12:54.286"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Change Password')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:12:54.444" starttime="20160404 02:12:54.359"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Change Password')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:54.445" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'Change Password')]'</msg>
+<status status="PASS" endtime="20160404 02:12:54.541" starttime="20160404 02:12:54.445"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Change Password')]</arg>
+</arguments>
+<msg timestamp="20160404 02:12:54.543" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'Change Password')]'.</msg>
+<status status="PASS" endtime="20160404 02:12:54.745" starttime="20160404 02:12:54.542"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:02.515" starttime="20160404 02:12:54.749"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Password Change</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:02.531" starttime="20160404 02:13:02.515"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Password change test maintained in separate test suite</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:02.531" starttime="20160404 02:13:02.531"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:13:02.843" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:13:02.843" starttime="20160404 02:13:02.531"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:13:03.681" starttime="20160404 02:13:02.843"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:13:03.681" starttime="20160404 02:13:02.843"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.11</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:13:03.681" critical="yes" starttime="20160404 02:12:19.089"></status>
+</test>
+<test id="s1-t4" name="User can work with their messages">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:13:03.681" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:13:26.201" starttime="20160404 02:13:03.681"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:13:26.567" starttime="20160404 02:13:26.201"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:26.669" starttime="20160404 02:13:26.568"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:26.670" starttime="20160404 02:13:26.669"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:13:26.830" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:13:26.830" starttime="20160404 02:13:26.670"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:13:26.831" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:13:26.831" starttime="20160404 02:13:26.830"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:26.832" starttime="20160404 02:13:26.831"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:13:26.837" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:13:27.431" starttime="20160404 02:13:26.836"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:29.826" starttime="20160404 02:13:27.431"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:13:29.827" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:13:30.148" starttime="20160404 02:13:29.826"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:13:30.150" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:13:31.685" starttime="20160404 02:13:30.149"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:13:31.687" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:13:32.052" starttime="20160404 02:13:31.686"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:13:32.053" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:13:37.001" starttime="20160404 02:13:32.052"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:37.080" starttime="20160404 02:13:37.001"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:13:37.080" starttime="20160404 02:13:26.835"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:13:37.080" starttime="20160404 02:13:26.832"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:13:37.173" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:13:37.173" starttime="20160404 02:13:37.080"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:37.173" starttime="20160404 02:13:37.173"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:13:37.173" starttime="20160404 02:13:03.681"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:37.173" starttime="20160404 02:13:37.173"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:13:37.173" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:13:37.251" starttime="20160404 02:13:37.173"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:13:37.283" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:13:37.283" starttime="20160404 02:13:37.251"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:37.283" starttime="20160404 02:13:37.283"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:37.283" starttime="20160404 02:13:37.283"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:37.330" starttime="20160404 02:13:37.283"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:13:37.330" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:13:37.486" starttime="20160404 02:13:37.330"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:44.934" starttime="20160404 02:13:37.486"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:45.012" starttime="20160404 02:13:44.936"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:13:45.013" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'</msg>
+<status status="PASS" endtime="20160404 02:13:45.135" starttime="20160404 02:13:45.013"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Messages')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:45.211" starttime="20160404 02:13:45.136"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Messages')]</arg>
+</arguments>
+<msg timestamp="20160404 02:13:45.212" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'My Messages')]'</msg>
+<status status="PASS" endtime="20160404 02:13:45.326" starttime="20160404 02:13:45.212"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>My Messages</arg>
+</arguments>
+<msg timestamp="20160404 02:13:45.327" level="INFO">Clicking link 'My Messages'.</msg>
+<status status="PASS" endtime="20160404 02:13:45.536" starttime="20160404 02:13:45.327"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Messages</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:13:47.077" starttime="20160404 02:13:45.540"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:13:47.525" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:13:47.526" starttime="20160404 02:13:47.078"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:13:48.159" starttime="20160404 02:13:47.527"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:13:48.160" starttime="20160404 02:13:47.527"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.12</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:13:48.161" critical="yes" starttime="20160404 02:13:03.681"></status>
+</test>
+<test id="s1-t5" name="User can exchange their Personal Settings">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:13:48.166" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:13:59.772" starttime="20160404 02:13:48.165"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:14:00.076" starttime="20160404 02:13:59.772"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:00.189" starttime="20160404 02:14:00.077"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:00.192" starttime="20160404 02:14:00.192"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:14:00.316" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:14:00.316" starttime="20160404 02:14:00.192"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:14:00.317" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:14:00.318" starttime="20160404 02:14:00.317"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:00.319" starttime="20160404 02:14:00.318"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:14:00.324" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:14:00.559" starttime="20160404 02:14:00.324"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:01.719" starttime="20160404 02:14:00.559"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:14:01.720" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:14:04.224" starttime="20160404 02:14:01.720"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:14:04.225" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:14:04.346" starttime="20160404 02:14:04.225"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:14:04.347" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:14:04.677" starttime="20160404 02:14:04.347"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:14:04.678" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:14:11.286" starttime="20160404 02:14:04.677"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:11.317" starttime="20160404 02:14:11.286"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:11.317" starttime="20160404 02:14:00.323"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:11.317" starttime="20160404 02:14:00.319"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:14:11.348" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:14:11.348" starttime="20160404 02:14:11.317"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:11.348" starttime="20160404 02:14:11.348"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:11.348" starttime="20160404 02:13:48.164"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:11.348" starttime="20160404 02:14:11.348"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:14:11.348" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:14:11.411" starttime="20160404 02:14:11.348"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:14:11.458" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:14:11.458" starttime="20160404 02:14:11.411"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:11.458" starttime="20160404 02:14:11.458"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:11.458" starttime="20160404 02:14:11.458"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:11.489" starttime="20160404 02:14:11.458"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:14:11.489" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:14:11.645" starttime="20160404 02:14:11.489"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:14.408" starttime="20160404 02:14:11.645"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to Personal Setting submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:14.408" starttime="20160404 02:14:14.408"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:14.479" starttime="20160404 02:14:14.408"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:14:14.479" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'</msg>
+<status status="PASS" endtime="20160404 02:14:14.597" starttime="20160404 02:14:14.479"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Personal Settings')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:14.660" starttime="20160404 02:14:14.597"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Personal Settings')]</arg>
+</arguments>
+<msg timestamp="20160404 02:14:14.675" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'Personal Settings')]'</msg>
+<status status="PASS" endtime="20160404 02:14:14.744" starttime="20160404 02:14:14.675"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'Personal Settings')]</arg>
+</arguments>
+<msg timestamp="20160404 02:14:14.744" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'Personal Settings')]'.</msg>
+<status status="PASS" endtime="20160404 02:14:14.911" starttime="20160404 02:14:14.744"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.406" starttime="20160404 02:14:14.911"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_btUpdate']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.437" starttime="20160404 02:14:21.406"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$tbFirstName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.535" starttime="20160404 02:14:21.437"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$tbLastName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.619" starttime="20160404 02:14:21.536"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$tbBirthDate</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.694" starttime="20160404 02:14:21.620"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$tbCity</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.762" starttime="20160404 02:14:21.695"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$tbRegion</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.809" starttime="20160404 02:14:21.762"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$tbCountry</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.871" starttime="20160404 02:14:21.809"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="Selenium2Library">
+<doc>Verifies that element identified with `locator` is enabled.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:21.965" starttime="20160404 02:14:21.871"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:14:22.387" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:14:22.387" starttime="20160404 02:14:21.965"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:14:23.121" starttime="20160404 02:14:22.387"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:23.121" starttime="20160404 02:14:22.387"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.13</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:14:23.121" critical="yes" starttime="20160404 02:13:48.163"></status>
+</test>
+<test id="s1-t6" name="User can see their Personal playlists">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:14:23.121" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:14:34.676" starttime="20160404 02:14:23.121"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:14:34.980" starttime="20160404 02:14:34.677"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:35.094" starttime="20160404 02:14:34.981"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:35.095" starttime="20160404 02:14:35.094"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:14:35.225" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:14:35.225" starttime="20160404 02:14:35.096"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:14:35.227" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:14:35.227" starttime="20160404 02:14:35.226"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:35.228" starttime="20160404 02:14:35.227"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:14:35.232" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:14:35.388" starttime="20160404 02:14:35.232"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:36.476" starttime="20160404 02:14:35.389"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:14:36.478" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:14:36.643" starttime="20160404 02:14:36.478"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:14:36.644" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:14:36.728" starttime="20160404 02:14:36.643"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:14:36.729" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:14:36.835" starttime="20160404 02:14:36.728"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:14:36.836" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:14:43.233" starttime="20160404 02:14:36.835"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:43.275" starttime="20160404 02:14:43.233"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:43.275" starttime="20160404 02:14:35.231"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:43.275" starttime="20160404 02:14:35.228"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:14:43.318" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:14:43.318" starttime="20160404 02:14:43.276"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:43.321" starttime="20160404 02:14:43.318"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:43.321" starttime="20160404 02:14:23.121"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:43.322" starttime="20160404 02:14:43.322"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:14:43.323" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:14:43.372" starttime="20160404 02:14:43.323"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:14:43.421" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:14:43.422" starttime="20160404 02:14:43.373"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:43.425" starttime="20160404 02:14:43.422"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:43.426" starttime="20160404 02:14:43.425"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:43.522" starttime="20160404 02:14:43.426"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:14:43.523" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:14:43.792" starttime="20160404 02:14:43.522"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:45.581" starttime="20160404 02:14:43.793"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My playlist submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:45.581" starttime="20160404 02:14:45.581"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:45.644" starttime="20160404 02:14:45.581"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:14:45.644" level="INFO">Simulating Mouse Over on element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'</msg>
+<status status="PASS" endtime="20160404 02:14:45.722" starttime="20160404 02:14:45.644"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='ctl34_A10']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:45.776" starttime="20160404 02:14:45.722"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='ctl34_A10']</arg>
+</arguments>
+<msg timestamp="20160404 02:14:45.778" level="INFO">Simulating Mouse Over on element 'xpath=.//*[@id='ctl34_A10']'</msg>
+<status status="PASS" endtime="20160404 02:14:45.874" starttime="20160404 02:14:45.778"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='ctl34_A10']</arg>
+</arguments>
+<msg timestamp="20160404 02:14:45.876" level="INFO">Clicking element 'xpath=.//*[@id='ctl34_A10']'.</msg>
+<status status="PASS" endtime="20160404 02:14:46.046" starttime="20160404 02:14:45.876"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:53.699" starttime="20160404 02:14:46.047"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_lblTitle']</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:14:53.727" starttime="20160404 02:14:53.700"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:14:54.054" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:14:54.054" starttime="20160404 02:14:53.728"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:14:54.766" starttime="20160404 02:14:54.055"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:14:54.767" starttime="20160404 02:14:54.055"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.14</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:14:54.769" critical="yes" starttime="20160404 02:14:23.121"></status>
+</test>
+<test id="s1-t7" name="User can see their Personal Updates">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:14:54.775" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:15:07.563" starttime="20160404 02:14:54.774"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:15:07.843" starttime="20160404 02:15:07.564"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:07.924" starttime="20160404 02:15:07.844"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:07.925" starttime="20160404 02:15:07.924"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:15:08.032" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:15:08.032" starttime="20160404 02:15:07.925"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:15:08.033" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:15:08.033" starttime="20160404 02:15:08.032"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:08.034" starttime="20160404 02:15:08.033"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:15:08.038" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:15:08.186" starttime="20160404 02:15:08.038"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:08.921" starttime="20160404 02:15:08.186"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:15:08.922" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:15:09.046" starttime="20160404 02:15:08.921"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:15:09.046" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:15:09.150" starttime="20160404 02:15:09.046"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:15:09.150" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:15:09.277" starttime="20160404 02:15:09.150"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:15:09.278" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:15:15.975" starttime="20160404 02:15:09.277"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:16.001" starttime="20160404 02:15:15.975"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:16.001" starttime="20160404 02:15:08.037"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:16.002" starttime="20160404 02:15:08.034"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:15:16.028" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:15:16.028" starttime="20160404 02:15:16.002"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:16.030" starttime="20160404 02:15:16.028"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:16.030" starttime="20160404 02:14:54.773"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:16.031" starttime="20160404 02:15:16.031"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:15:16.032" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:15:16.079" starttime="20160404 02:15:16.031"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:15:16.110" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:15:16.110" starttime="20160404 02:15:16.080"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:16.112" starttime="20160404 02:15:16.110"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:16.113" starttime="20160404 02:15:16.112"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:16.214" starttime="20160404 02:15:16.113"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:15:16.216" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:15:16.527" starttime="20160404 02:15:16.215"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:24.069" starttime="20160404 02:15:16.528"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left Updates submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:24.071" starttime="20160404 02:15:24.070"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[1]/a</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:24.116" starttime="20160404 02:15:24.071"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[1]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:15:24.117" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[1]/a'.</msg>
+<status status="PASS" endtime="20160404 02:15:24.258" starttime="20160404 02:15:24.117"></status>
+</kw>
+<kw name="Then WAIT UNTIL PAGE DOES NOT CONTAIN" library="Selenium2Library">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>JUST WAIT</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:31.780" starttime="20160404 02:15:24.259"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[1]/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:31.824" starttime="20160404 02:15:31.785"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:15:32.458" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:15:32.458" starttime="20160404 02:15:31.824"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:15:33.107" starttime="20160404 02:15:32.497"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:33.107" starttime="20160404 02:15:32.496"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.15</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:15:33.107" critical="yes" starttime="20160404 02:14:54.771"></status>
+</test>
+<test id="s1-t8" name="User can see their Personal Friends">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:15:33.112" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:15:43.745" starttime="20160404 02:15:33.112"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:15:43.890" starttime="20160404 02:15:43.745"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:43.964" starttime="20160404 02:15:43.890"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:43.965" starttime="20160404 02:15:43.965"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:15:44.024" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:15:44.024" starttime="20160404 02:15:43.965"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:15:44.025" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:15:44.025" starttime="20160404 02:15:44.024"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:44.025" starttime="20160404 02:15:44.025"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:15:44.028" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:15:45.041" starttime="20160404 02:15:44.028"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:45.061" starttime="20160404 02:15:45.042"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:15:45.062" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:15:45.248" starttime="20160404 02:15:45.061"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:15:45.249" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:15:45.339" starttime="20160404 02:15:45.248"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:15:45.340" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:15:45.493" starttime="20160404 02:15:45.340"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:15:45.494" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:15:53.204" starttime="20160404 02:15:45.494"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:53.219" starttime="20160404 02:15:53.204"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:53.219" starttime="20160404 02:15:44.027"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:53.219" starttime="20160404 02:15:44.025"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:15:53.344" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:15:53.344" starttime="20160404 02:15:53.219"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:53.344" starttime="20160404 02:15:53.344"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:53.344" starttime="20160404 02:15:33.111"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:53.344" starttime="20160404 02:15:53.344"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:15:53.344" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:15:53.391" starttime="20160404 02:15:53.344"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:15:53.422" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:15:53.422" starttime="20160404 02:15:53.391"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:53.422" starttime="20160404 02:15:53.422"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:53.422" starttime="20160404 02:15:53.422"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:53.641" starttime="20160404 02:15:53.422"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:15:53.641" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:15:55.500" starttime="20160404 02:15:53.641"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:55.516" starttime="20160404 02:15:55.500"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left Friends submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:55.516" starttime="20160404 02:15:55.516"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[2]/a</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:55.547" starttime="20160404 02:15:55.516"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:15:55.547" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[2]/a'.</msg>
+<status status="PASS" endtime="20160404 02:15:56.642" starttime="20160404 02:15:55.547"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_panNoFriends']/p/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:15:56.742" starttime="20160404 02:15:56.642"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:15:57.206" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:15:57.206" starttime="20160404 02:15:56.750"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:15:57.805" starttime="20160404 02:15:57.208"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:15:57.805" starttime="20160404 02:15:57.207"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.16</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:15:57.805" critical="yes" starttime="20160404 02:15:33.109"></status>
+</test>
+<test id="s1-t9" name="User can see their Messages">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:15:57.805" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:16:08.191" starttime="20160404 02:15:57.805"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:16:08.472" starttime="20160404 02:16:08.192"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:08.599" starttime="20160404 02:16:08.473"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:08.600" starttime="20160404 02:16:08.600"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:16:08.678" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:16:08.678" starttime="20160404 02:16:08.601"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:16:08.679" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:16:08.679" starttime="20160404 02:16:08.679"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:08.680" starttime="20160404 02:16:08.680"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:16:08.686" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:16:08.863" starttime="20160404 02:16:08.685"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:09.806" starttime="20160404 02:16:08.863"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:09.806" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:16:09.932" starttime="20160404 02:16:09.806"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:09.932" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:16:10.015" starttime="20160404 02:16:09.932"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:16:10.016" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:16:10.134" starttime="20160404 02:16:10.016"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:16:10.135" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:16:16.485" starttime="20160404 02:16:10.134"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:16.610" starttime="20160404 02:16:16.486"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:16.610" starttime="20160404 02:16:08.684"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:16.610" starttime="20160404 02:16:08.681"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:16:16.701" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:16:16.701" starttime="20160404 02:16:16.611"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:16.701" starttime="20160404 02:16:16.701"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:16.701" starttime="20160404 02:15:57.805"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:16.701" starttime="20160404 02:16:16.701"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:16:16.701" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:16:16.732" starttime="20160404 02:16:16.701"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:16:16.748" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:16:16.748" starttime="20160404 02:16:16.732"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:16.764" starttime="20160404 02:16:16.748"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:16.764" starttime="20160404 02:16:16.764"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:16.795" starttime="20160404 02:16:16.764"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:16:16.795" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:16:16.951" starttime="20160404 02:16:16.795"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:18.076" starttime="20160404 02:16:16.951"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left Messages submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:18.076" starttime="20160404 02:16:18.076"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[3]/a</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:18.107" starttime="20160404 02:16:18.076"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:16:18.107" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20160404 02:16:18.920" starttime="20160404 02:16:18.107"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[1]/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:18.935" starttime="20160404 02:16:18.920"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:16:19.154" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:16:19.154" starttime="20160404 02:16:18.951"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:16:19.529" starttime="20160404 02:16:19.154"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:19.529" starttime="20160404 02:16:19.154"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.16</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:16:19.529" critical="yes" starttime="20160404 02:15:57.805"></status>
+</test>
+<test id="s1-t10" name="User can upgrade their Subscription">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:19.529" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:16:28.931" starttime="20160404 02:16:19.529"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:16:29.133" starttime="20160404 02:16:28.932"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:29.214" starttime="20160404 02:16:29.134"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:29.217" starttime="20160404 02:16:29.216"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:16:29.298" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:16:29.298" starttime="20160404 02:16:29.217"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:16:29.299" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:16:29.299" starttime="20160404 02:16:29.298"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:29.300" starttime="20160404 02:16:29.299"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:16:29.305" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:16:30.104" starttime="20160404 02:16:29.304"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:30.119" starttime="20160404 02:16:30.104"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:30.120" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:16:30.228" starttime="20160404 02:16:30.119"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:30.229" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:16:30.311" starttime="20160404 02:16:30.229"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:16:30.312" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:16:30.411" starttime="20160404 02:16:30.311"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:16:30.412" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:16:36.115" starttime="20160404 02:16:30.412"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:36.144" starttime="20160404 02:16:36.116"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:36.144" starttime="20160404 02:16:29.303"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:36.144" starttime="20160404 02:16:29.300"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:16:36.172" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:16:36.172" starttime="20160404 02:16:36.144"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:36.174" starttime="20160404 02:16:36.172"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:36.174" starttime="20160404 02:16:19.529"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:36.175" starttime="20160404 02:16:36.175"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:16:36.176" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:16:36.212" starttime="20160404 02:16:36.175"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:16:36.247" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:16:36.247" starttime="20160404 02:16:36.212"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:36.249" starttime="20160404 02:16:36.247"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:36.249" starttime="20160404 02:16:36.249"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:36.287" starttime="20160404 02:16:36.249"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:16:36.288" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:16:37.633" starttime="20160404 02:16:36.287"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:37.661" starttime="20160404 02:16:37.634"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left Messages submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:37.663" starttime="20160404 02:16:37.662"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[5]/a</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:37.694" starttime="20160404 02:16:37.663"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[5]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:16:37.695" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[5]/a'.</msg>
+<status status="PASS" endtime="20160404 02:16:38.821" starttime="20160404 02:16:37.695"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[1]/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:38.837" starttime="20160404 02:16:38.821"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Subscription change test maintained in separate test suite</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:38.837" starttime="20160404 02:16:38.837"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:16:39.087" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:16:39.087" starttime="20160404 02:16:38.837"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:16:39.493" starttime="20160404 02:16:39.087"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:39.493" starttime="20160404 02:16:39.087"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.17</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:16:39.493" critical="yes" starttime="20160404 02:16:19.529"></status>
+</test>
+<test id="s1-t11" name="User can update information about Youself">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:39.509" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:16:49.774" starttime="20160404 02:16:39.509"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:16:50.030" starttime="20160404 02:16:49.774"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:50.110" starttime="20160404 02:16:50.030"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:50.111" starttime="20160404 02:16:50.110"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:16:50.162" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:16:50.162" starttime="20160404 02:16:50.111"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:16:50.163" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:16:50.163" starttime="20160404 02:16:50.163"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:50.163" starttime="20160404 02:16:50.163"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:16:50.166" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:16:51.016" starttime="20160404 02:16:50.166"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:51.030" starttime="20160404 02:16:51.016"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:51.031" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:16:51.277" starttime="20160404 02:16:51.030"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:16:51.278" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:16:51.360" starttime="20160404 02:16:51.277"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:16:51.360" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:16:51.468" starttime="20160404 02:16:51.360"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:16:51.468" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:16:59.083" starttime="20160404 02:16:51.468"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:59.103" starttime="20160404 02:16:59.084"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:59.103" starttime="20160404 02:16:50.165"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:59.103" starttime="20160404 02:16:50.164"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:16:59.130" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:16:59.130" starttime="20160404 02:16:59.104"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:59.132" starttime="20160404 02:16:59.130"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:16:59.133" starttime="20160404 02:16:39.509"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:59.134" starttime="20160404 02:16:59.133"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:16:59.134" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:16:59.178" starttime="20160404 02:16:59.134"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:16:59.207" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:16:59.208" starttime="20160404 02:16:59.178"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:59.209" starttime="20160404 02:16:59.208"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:59.210" starttime="20160404 02:16:59.209"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:16:59.234" starttime="20160404 02:16:59.210"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:16:59.235" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:17:00.373" starttime="20160404 02:16:59.235"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:00.406" starttime="20160404 02:17:00.373"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left About me submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:00.408" starttime="20160404 02:17:00.408"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:00.431" starttime="20160404 02:17:00.409"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:00.432" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:01.031" starttime="20160404 02:17:00.432"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_Title1_ctriTitle']/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:01.073" starttime="20160404 02:17:01.032"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Review and exchange Personal information</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:01.074" starttime="20160404 02:17:01.074"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[2]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:01.075" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[2]/div[2]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:01.745" starttime="20160404 02:17:01.075"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>ctl01</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:01.772" starttime="20160404 02:17:01.746"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set and Type test variable for input form</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:01.773" starttime="20160404 02:17:01.773"></status>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<assign>
+<var>${NewFirstName}</var>
+</assign>
+<msg timestamp="20160404 02:17:01.774" level="INFO">${NewFirstName} = Fonda</msg>
+<status status="PASS" endtime="20160404 02:17:01.774" starttime="20160404 02:17:01.774"></status>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<assign>
+<var>${NewLastName}</var>
+</assign>
+<msg timestamp="20160404 02:17:01.775" level="INFO">${NewLastName} = Dare</msg>
+<status status="PASS" endtime="20160404 02:17:01.775" starttime="20160404 02:17:01.775"></status>
+</kw>
+<kw name="Date" library="FakerLibrary">
+<doc>Get a date string between January 1, 1970 and now</doc>
+<assign>
+<var>${Date}</var>
+</assign>
+<msg timestamp="20160404 02:17:01.776" level="INFO">${Date} = 2014-03-16</msg>
+<status status="PASS" endtime="20160404 02:17:01.776" starttime="20160404 02:17:01.776"></status>
+</kw>
+<kw name="City" library="FakerLibrary">
+<doc>:example 'Sashabury'</doc>
+<assign>
+<var>${City}</var>
+</assign>
+<msg timestamp="20160404 02:17:01.777" level="INFO">${City} = South Kiaraville</msg>
+<status status="PASS" endtime="20160404 02:17:01.777" starttime="20160404 02:17:01.777"></status>
+</kw>
+<kw name="State" library="FakerLibrary">
+<assign>
+<var>${State}</var>
+</assign>
+<msg timestamp="20160404 02:17:01.778" level="INFO">${State} = New York</msg>
+<status status="PASS" endtime="20160404 02:17:01.778" starttime="20160404 02:17:01.778"></status>
+</kw>
+<kw name="Country" library="FakerLibrary">
+<assign>
+<var>${Country}</var>
+</assign>
+<msg timestamp="20160404 02:17:01.778" level="INFO">${Country} = Solomon Islands</msg>
+<status status="PASS" endtime="20160404 02:17:01.778" starttime="20160404 02:17:01.778"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${NewFirstName}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:01.779" level="INFO">Fonda</msg>
+<status status="PASS" endtime="20160404 02:17:01.779" starttime="20160404 02:17:01.779"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${NewLastName}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:01.781" level="INFO">Dare</msg>
+<status status="PASS" endtime="20160404 02:17:01.781" starttime="20160404 02:17:01.781"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']</arg>
+<arg>${NewFirstName}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:01.782" level="INFO">Typing text 'Fonda' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']'</msg>
+<status status="PASS" endtime="20160404 02:17:01.862" starttime="20160404 02:17:01.781"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbLastName']</arg>
+<arg>${NewLastName}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:01.863" level="INFO">Typing text 'Dare' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbLastName']'</msg>
+<status status="PASS" endtime="20160404 02:17:01.979" starttime="20160404 02:17:01.863"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbBirthDate']</arg>
+<arg>${Date}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:01.980" level="INFO">Typing text '2014-03-16' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbBirthDate']'</msg>
+<status status="PASS" endtime="20160404 02:17:02.101" starttime="20160404 02:17:01.980"></status>
+</kw>
+<kw name="Random Int" library="FakerLibrary">
+<doc>Returns a random integer between two values.</doc>
+<arguments>
+<arg>1</arg>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${label_number}</var>
+</assign>
+<msg timestamp="20160404 02:17:02.102" level="INFO">${label_number} = 2</msg>
+<status status="PASS" endtime="20160404 02:17:02.102" starttime="20160404 02:17:02.102"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_ddlGender']/label[${label_number}]/span</arg>
+</arguments>
+<msg timestamp="20160404 02:17:02.103" level="INFO">Clicking element 'xpath=.//*[@id='cphMain_cphMain_content_ddlGender']/label[2]/span'.</msg>
+<status status="PASS" endtime="20160404 02:17:02.197" starttime="20160404 02:17:02.103"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbCity']</arg>
+<arg>${City}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:02.197" level="INFO">Typing text 'South Kiaraville' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbCity']'</msg>
+<status status="PASS" endtime="20160404 02:17:02.344" starttime="20160404 02:17:02.197"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbRegion']</arg>
+<arg>${State}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:02.345" level="INFO">Typing text 'New York' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbRegion']'</msg>
+<status status="PASS" endtime="20160404 02:17:02.503" starttime="20160404 02:17:02.345"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbCountry']</arg>
+<arg>${Country}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:02.503" level="INFO">Typing text 'Solomon Islands' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbCountry']'</msg>
+<status status="PASS" endtime="20160404 02:17:02.684" starttime="20160404 02:17:02.503"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:02.703" starttime="20160404 02:17:02.685"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate</arg>
+</arguments>
+<msg timestamp="20160404 02:17:02.704" level="INFO">Clicking button 'ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate'.</msg>
+<status status="PASS" endtime="20160404 02:17:02.924" starttime="20160404 02:17:02.703"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:17:04.401" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:17:04.401" starttime="20160404 02:17:02.926"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Return First conditions</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:04.402" starttime="20160404 02:17:04.401"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left About me submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:04.402" starttime="20160404 02:17:04.402"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:04.403" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:04.988" starttime="20160404 02:17:04.403"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_Title1_ctriTitle']/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:05.009" starttime="20160404 02:17:04.989"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Review and exchange Personal information to OLD CONDITIONS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:05.009" starttime="20160404 02:17:05.009"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[2]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:05.010" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[2]/div[2]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:05.795" starttime="20160404 02:17:05.010"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>ctl01</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:05.835" starttime="20160404 02:17:05.795"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set and Type test variable for input form</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:05.836" starttime="20160404 02:17:05.836"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']</arg>
+<arg>${FIRST_NAME}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:05.837" level="INFO">Typing text 'Vadim' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbFirstName']'</msg>
+<status status="PASS" endtime="20160404 02:17:05.982" starttime="20160404 02:17:05.837"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_tbLastName']</arg>
+<arg>${LAST_NAME}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:05.982" level="INFO">Typing text 'Novikov' into text field 'xpath=.//*[@id='cphMain_cphMain_content_tbLastName']'</msg>
+<status status="PASS" endtime="20160404 02:17:06.138" starttime="20160404 02:17:05.982"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${label_number}</var>
+</assign>
+<msg timestamp="20160404 02:17:06.138" level="INFO">${label_number} = 2</msg>
+<status status="PASS" endtime="20160404 02:17:06.138" starttime="20160404 02:17:06.138"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_ddlGender']/label[${label_number}]/span</arg>
+</arguments>
+<msg timestamp="20160404 02:17:06.138" level="INFO">Clicking element 'xpath=.//*[@id='cphMain_cphMain_content_ddlGender']/label[2]/span'.</msg>
+<status status="PASS" endtime="20160404 02:17:06.248" starttime="20160404 02:17:06.138"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:06.279" starttime="20160404 02:17:06.248"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate</arg>
+</arguments>
+<msg timestamp="20160404 02:17:06.279" level="INFO">Clicking button 'ctl00$ctl00$ctl00$cphMain$cphMain$content$btUpdate'.</msg>
+<status status="PASS" endtime="20160404 02:17:06.435" starttime="20160404 02:17:06.279"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:17:06.763" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:17:06.763" starttime="20160404 02:17:06.435"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${USER_NAME}</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:07.638" starttime="20160404 02:17:06.763"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:17:07.951" starttime="20160404 02:17:07.638"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:17:07.951" starttime="20160404 02:17:07.638"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.18</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:17:07.951" critical="yes" starttime="20160404 02:16:39.493"></status>
+</test>
+<test id="s1-t12" name="User can update their foto">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="When Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:07.951" level="INFO">Opening browser 'ff' to base url 'http://www2.memocast.com'</msg>
+<status status="PASS" endtime="20160404 02:17:17.214" starttime="20160404 02:17:07.951"></status>
+</kw>
+<kw name="And Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160404 02:17:17.371" starttime="20160404 02:17:17.215"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_HyperLink1</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:17.422" starttime="20160404 02:17:17.371"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Request of system STATUS</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:17.424" starttime="20160404 02:17:17.423"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=.status-bar</arg>
+</arguments>
+<assign>
+<var>${element_text}</var>
+</assign>
+<msg timestamp="20160404 02:17:17.465" level="INFO">${element_text} = Login | Signup
+Become Gold Member
+Make a Gift!</msg>
+<status status="PASS" endtime="20160404 02:17:17.465" starttime="20160404 02:17:17.425"></status>
+</kw>
+<kw name="Get Line" library="String">
+<doc>Returns the specified line from the given ``string``.</doc>
+<arguments>
+<arg>${element_text}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20160404 02:17:17.466" level="INFO">${result} = Login | Signup</msg>
+<status status="PASS" endtime="20160404 02:17:17.466" starttime="20160404 02:17:17.465"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login with valid credentials or Logout and Login with valid cr-ls(when system save any legitim cr-ls)</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:17.466" starttime="20160404 02:17:17.466"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${result}' == '${STATUS_1}' or '${result}' == '${STATUS_2}'</arg>
+<arg>Login with valid credentials</arg>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Login with valid credentials" library="Common">
+<arguments>
+<arg>${LOGIN}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Then click link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>id=ctl34_aLogin</arg>
+</arguments>
+<msg timestamp="20160404 02:17:17.468" level="INFO">Clicking link 'id=ctl34_aLogin'.</msg>
+<status status="PASS" endtime="20160404 02:17:18.240" starttime="20160404 02:17:17.468"></status>
+</kw>
+<kw name="Then wait until page contains element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=.memo-header</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:18.258" starttime="20160404 02:17:18.240"></status>
+</kw>
+<kw name="Then input text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbLogin</arg>
+<arg>${LOGIN}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:18.258" level="INFO">Typing text 'novikov6455@gmail.com' into text field 'id=cphMain_tbLogin'</msg>
+<status status="PASS" endtime="20160404 02:17:18.390" starttime="20160404 02:17:18.258"></status>
+</kw>
+<kw name="Then input password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=cphMain_tbPassword</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20160404 02:17:18.392" level="INFO">Typing password into text field 'id=cphMain_tbPassword'</msg>
+<status status="PASS" endtime="20160404 02:17:18.490" starttime="20160404 02:17:18.391"></status>
+</kw>
+<kw name="Then unselect checkbox" library="Selenium2Library">
+<doc>Removes selection of checkbox identified by `locator`.</doc>
+<arguments>
+<arg>id=cbRememberMe</arg>
+</arguments>
+<msg timestamp="20160404 02:17:18.491" level="INFO">Unselecting checkbox 'id=cbRememberMe'.</msg>
+<status status="PASS" endtime="20160404 02:17:18.620" starttime="20160404 02:17:18.490"></status>
+</kw>
+<kw name="Then click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=btLoginSubmitButton</arg>
+</arguments>
+<msg timestamp="20160404 02:17:18.620" level="INFO">Clicking button 'id=btLoginSubmitButton'.</msg>
+<status status="PASS" endtime="20160404 02:17:25.557" starttime="20160404 02:17:18.620"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:25.588" starttime="20160404 02:17:25.557"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:17:25.588" starttime="20160404 02:17:17.467"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:17:25.589" starttime="20160404 02:17:17.466"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=ctl34_lblUserName</arg>
+</arguments>
+<assign>
+<var>${STATUS_NAME}</var>
+</assign>
+<msg timestamp="20160404 02:17:25.627" level="INFO">${STATUS_NAME} = Vadim Novikov</msg>
+<status status="PASS" endtime="20160404 02:17:25.628" starttime="20160404 02:17:25.589"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${STATUS_NAME}' != '${USER_NAME}'</arg>
+<arg>Logout and Login with valid cr-ls</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:25.630" starttime="20160404 02:17:25.628"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:17:25.630" starttime="20160404 02:17:07.951"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check Language of site</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:25.631" starttime="20160404 02:17:25.631"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>ctl34_A1</arg>
+</arguments>
+<msg timestamp="20160404 02:17:25.632" level="INFO">Verifying element 'ctl34_A1' is visible.</msg>
+<status status="PASS" endtime="20160404 02:17:25.670" starttime="20160404 02:17:25.632"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=#ctl34_A1</arg>
+</arguments>
+<assign>
+<var>${element_language}</var>
+</assign>
+<msg timestamp="20160404 02:17:25.693" level="INFO">${element_language} = Home</msg>
+<status status="PASS" endtime="20160404 02:17:25.693" starttime="20160404 02:17:25.670"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${element_language}' == 'Главная'</arg>
+<arg>Set English language</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:25.695" starttime="20160404 02:17:25.694"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to My Profile Page</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:25.695" starttime="20160404 02:17:25.695"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//a[contains(normalize-space(.), 'My Profile')]</arg>
+</arguments>
+<msg timestamp="20160404 02:17:25.696" level="INFO">Clicking element 'xpath=.//a[contains(normalize-space(.), 'My Profile')]'.</msg>
+<status status="PASS" endtime="20160404 02:17:25.845" starttime="20160404 02:17:25.696"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphLeft_ctl00_avatar']</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:27.250" starttime="20160404 02:17:25.846"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left About me submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:27.250" starttime="20160404 02:17:27.250"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:27.250" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:27.875" starttime="20160404 02:17:27.250"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_Title1_ctriTitle']/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:27.906" starttime="20160404 02:17:27.875"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Review and exchange Personal information</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:27.906" starttime="20160404 02:17:27.906"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[3]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:27.906" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[2]/div[3]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:28.547" starttime="20160404 02:17:27.906"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>ctl01</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:28.672" starttime="20160404 02:17:28.547"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Replace avatar picture in input form</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:28.672" starttime="20160404 02:17:28.672"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_fuImage']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:28.687" starttime="20160404 02:17:28.672"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the `file_path` into file input field found by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_fuImage']</arg>
+<arg>${file_path2}</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:28.719" starttime="20160404 02:17:28.687"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_LinkButton1']</arg>
+</arguments>
+<msg timestamp="20160404 02:17:28.734" level="INFO">Clicking button 'xpath=.//*[@id='cphMain_cphMain_content_LinkButton1']'.</msg>
+<status status="PASS" endtime="20160404 02:17:30.281" starttime="20160404 02:17:28.734"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[1]/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:30.312" starttime="20160404 02:17:30.281"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:17:30.781" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:17:30.781" starttime="20160404 02:17:30.312"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Return First conditions</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:30.781" starttime="20160404 02:17:30.781"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Navigate to left About me submenu</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:30.781" starttime="20160404 02:17:30.781"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:30.781" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[1]/ul/li[7]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:31.409" starttime="20160404 02:17:30.781"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_Title1_ctriTitle']/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:31.425" starttime="20160404 02:17:31.409"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Review and exchange Personal information</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:31.425" starttime="20160404 02:17:31.425"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[3]/a</arg>
+</arguments>
+<msg timestamp="20160404 02:17:31.441" level="INFO">Clicking element 'xpath=.//*[@id='content']/div/div[2]/div[3]/a'.</msg>
+<status status="PASS" endtime="20160404 02:17:31.987" starttime="20160404 02:17:31.425"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>ctl01</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:32.003" starttime="20160404 02:17:31.987"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Replace avatar picture in input form</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:32.003" starttime="20160404 02:17:32.003"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_fuImage']</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:32.019" starttime="20160404 02:17:32.003"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the `file_path` into file input field found by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_fuImage']</arg>
+<arg>${file_path1}</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:32.050" starttime="20160404 02:17:32.019"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='cphMain_cphMain_content_LinkButton1']</arg>
+</arguments>
+<msg timestamp="20160404 02:17:32.066" level="INFO">Clicking button 'xpath=.//*[@id='cphMain_cphMain_content_LinkButton1']'.</msg>
+<status status="PASS" endtime="20160404 02:17:33.503" starttime="20160404 02:17:32.066"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=.//*[@id='content']/div/div[2]/div[1]/span</arg>
+</arguments>
+<status status="PASS" endtime="20160404 02:17:33.519" starttime="20160404 02:17:33.503"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160404 02:17:33.832" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160404 02:17:33.832" starttime="20160404 02:17:33.519"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160404 02:17:34.222" starttime="20160404 02:17:33.832"></status>
+</kw>
+<status status="PASS" endtime="20160404 02:17:34.222" starttime="20160404 02:17:33.832"></status>
+</kw>
+<tags>
+<tag>DEBUG 06.19</tag>
+</tags>
+<status status="PASS" endtime="20160404 02:17:34.222" critical="yes" starttime="20160404 02:17:07.951"></status>
+</test>
+<doc>Suite description: Page My profile</doc>
+<status status="PASS" endtime="20160404 02:17:34.238" starttime="20160404 02:09:56.827"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="12">Critical Tests</stat>
+<stat fail="0" pass="12">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">DEBUG 06.01</stat>
+<stat fail="0" pass="1">DEBUG 06.10</stat>
+<stat fail="0" pass="1">DEBUG 06.11</stat>
+<stat fail="0" pass="1">DEBUG 06.12</stat>
+<stat fail="0" pass="1">DEBUG 06.13</stat>
+<stat fail="0" pass="1">DEBUG 06.14</stat>
+<stat fail="0" pass="1">DEBUG 06.15</stat>
+<stat fail="0" pass="2">DEBUG 06.16</stat>
+<stat fail="0" pass="1">DEBUG 06.17</stat>
+<stat fail="0" pass="1">DEBUG 06.18</stat>
+<stat fail="0" pass="1">DEBUG 06.19</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="06 MyProfile" pass="12">06 MyProfile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

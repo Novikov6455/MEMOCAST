@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Suite description: Browse Movies Page of site also uses left part Navigation menu
-Library  Selenium2Library  1.3  10	    # Sets default timeout to 0.5 seconds and default implicit_wait to 10 seconds
+Library  Selenium2Library  1.5  10	    # Sets default timeout to 0.5 seconds and default implicit_wait to 10 seconds
 Resource  ../Resources/Common.robot     # Common resources keep in Common.robot
 Library  ../Resources/Common.py
 # executable Terminal string
@@ -141,156 +141,193 @@ User can use Left side Menu to set Categories in search filtr of Browse Movies p
     Wait Until Page Contains   	    Browse / Movies / Anime
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[4]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[4]/a
     Wait Until Page Contains   	    Browse / Movies / Cartoons
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
     #click element   	            xpath=.//li[contains(normalize-space(.), 'Classics')]
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[5]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[5]/a
     Wait Until Page Contains    	Browse / Movies / Classics
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[6]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[6]/a
     Wait Until Page Contains   	    Browse / Movies / Comedy
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[7]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[7]/a
     Wait Until Page Contains   	    Browse / Movies / Cooking
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[8]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[8]/a
     Wait Until Page Contains   	    Browse / Movies / Crime/Gangster
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
-
+    mouse over                      xpath=.//*[@id='left-menu-movies']/li[9]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[9]/a
     Wait Until Page Contains   	    Browse / Movies / Detective
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[10]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[10]/a
     Wait Until Page Contains   	    Browse / Movies / Documentary
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[11]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[11]/a
     Wait Until Page Contains   	    Browse / Movies / Drama
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[12]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[12]/a
     Wait Until Page Contains   	    Browse / Movies / Education
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[13]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[13]/a
     Wait Until Page Contains    	Browse / Movies / Experimental Art
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[14]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[14]/a
     Wait Until Page Contains   	    Browse / Movies / Favorites
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[15]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[15]/a
     Wait Until Page Contains   	    Browse / Movies / Free Collection
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[16]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[16]/a
     Wait Until Page Contains   	    Browse / Movies / Historical/Epics
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[17]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[17]/a
     Wait Until Page Contains   	Browse / Movies / Horror
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[18]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[18]/a
     Wait Until Page Contains   	Browse / Movies / Humor
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[19]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[19]/a
     Wait Until Page Contains   	Browse / Movies / Kids/Family
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[20]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[20]/a
     Wait Until Page Contains   	Browse / Movies / Musicals / Music
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[21]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[21]/a
     Wait Until Page Contains   	Browse / Movies / New releases
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[22]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[22]/a
     Wait Until Page Contains   	Browse / Movies / Olympic Games Sochi 2014
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[23]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[23]/a
     Wait Until Page Contains   	Browse / Movies / Opera / Ballet
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[24]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[24]/a
     Wait Until Page Contains   	Browse / Movies / Politics
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[25]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[25]/a
     Wait Until Page Contains   	Browse / Movies / Religion
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[26]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[26]/a
     Wait Until Page Contains   	Browse / Movies / Romance
      click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[27]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[27]/a
     Wait Until Page Contains   	Browse / Movies / Science Fiction / Fantasy
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[28]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[28]/a
     Wait Until Page Contains   	Browse / Movies / Short Films
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[29]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[29]/a
     Wait Until Page Contains   	Browse / Movies / Social Initiatives
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[30]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[30]/a
     Wait Until Page Contains   	Browse / Movies / Sports / Fitness
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[31]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[31]/a
     Wait Until Page Contains   	Browse / Movies / Television
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[32]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[32]/a
     Wait Until Page Contains   	Browse / Movies / Theatre
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[33]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[33]/a
     Wait Until Page Contains   	Browse / Movies / Thriller
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[34]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[34]/a
     Wait Until Page Contains   	Browse / Movies / Turkish Serials
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[35]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[35]/a
     Wait Until Page Contains   	Browse / Movies / Tutorials
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[36]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[36]/a
     Wait Until Page Contains   	Browse / Movies / TV News
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[37]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[37]/a
     Wait Until Page Contains   	Browse / Movies / TV Shows (Serials)
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[38]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[38]/a
     Wait Until Page Contains   	Browse / Movies / USA Movies
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[39]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[39]/a
     Wait Until Page Contains   	Browse / Movies / War
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[40]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[40]/a
     Wait Until Page Contains   	Browse / Movies / Western
     click element                   xpath=(.//span[contains(normalize-space(@class), "col-header")])[3]
 
+    mouse over   	                xpath=.//*[@id='left-menu-movies']/li[41]/a
     Click Link   	                xpath=.//*[@id='left-menu-movies']/li[41]/a
     Wait Until Page Contains   	Browse / Movies / Oscar nominees
 

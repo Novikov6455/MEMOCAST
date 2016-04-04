@@ -112,7 +112,7 @@ User can Change their password
     Focus   	                    xpath=.//a[contains(normalize-space(.), 'My Profile')]
     click element                   xpath=.//a[contains(normalize-space(.), 'My Profile')]
     Then WAIT UNTIL PAGE DOES NOT CONTAIN    JUST WAIT   2
-    Focus                           xpath=.//a[contains(normalize-space(.), 'My Profile')]
+    #Focus                           xpath=.//a[contains(normalize-space(.), 'My Profile')]
     mouse over                      xpath=.//a[contains(normalize-space(.), 'My Profile')]
     wait until element is visible  	xpath=.//a[contains(normalize-space(.), 'Change Password')]
     mouse over                      xpath=.//a[contains(normalize-space(.), 'Change Password')]
