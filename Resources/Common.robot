@@ -7,7 +7,7 @@ Library  ../Resources/Common.py
 #robot -d results tests/Common.robot
 *** Variables ***
                                     # Setting Globall Variables
-${BROWSER} =  ie                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
+${BROWSER} =  ff                    # ie=Internet Explorer, ff=FireFox, gc=Google Chrome
 ${START_URL} =  http://www2.memocast.com
 ${LOGIN} =  novikov6455@gmail.com
 ${PASSWORD} =  5906455
@@ -45,8 +45,8 @@ End Web Test
     #Then wait until page contains element  Logout
     #Then wait until page contains element  id=ctl34_aLogout
     ##Then click link  css=#ctl34_aLogout
-    #Then close browser
-    close all browsers
+    #close all browsers
+    Then close browser
 
 Login with valid credentials
     [Arguments]  ${LOGIN}  ${PASSWORD}

@@ -5,34 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ec71d2d-8406-409f-9d2d-28e0bb268072" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test01_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test01_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test02_win8-chrom.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test02_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test02_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test03_win8-chrom.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test03_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test03_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test04_win8-chrom.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test04_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test04_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test05_win8-chrom.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test05_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test05_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test06_win8-chrom.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test06_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test06_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test07_win8-chrom.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test07_win8-explorer.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test07_win8-firefox.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Batch/test_all_win8-chrom.bat" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/log.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/output.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/report.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/test_all_win8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit06/selenium-screenshot-4.png" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit06/selenium-screenshot-4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit06/selenium-screenshot-6.png" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit06/selenium-screenshot-6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit06/selenium-screenshot-9.png" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit06/selenium-screenshot-9.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/00_ReadMeMemocast-test.txt" afterPath="$PROJECT_DIR$/Tests/00_ReadMeMemocast-test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/05_BrowseMovies.robot" afterPath="$PROJECT_DIR$/Tests/05_BrowseMovies.robot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/06_MyProfile.robot" afterPath="$PROJECT_DIR$/Tests/06_MyProfile.robot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Common.robot" afterPath="$PROJECT_DIR$/Resources/Common.robot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/log.html" afterPath="$PROJECT_DIR$/Results/log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/output.xml" afterPath="$PROJECT_DIR$/Results/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/report.html" afterPath="$PROJECT_DIR$/Results/report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-chrome/suit01/log.html" afterPath="$PROJECT_DIR$/Results/win8-chrome/suit01/log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-chrome/suit01/output.xml" afterPath="$PROJECT_DIR$/Results/win8-chrome/suit01/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-chrome/suit01/report.html" afterPath="$PROJECT_DIR$/Results/win8-chrome/suit01/report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-explorer/suit01/log.html" afterPath="$PROJECT_DIR$/Results/win8-explorer/suit01/log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-explorer/suit01/output.xml" afterPath="$PROJECT_DIR$/Results/win8-explorer/suit01/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-explorer/suit01/report.html" afterPath="$PROJECT_DIR$/Results/win8-explorer/suit01/report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit01/log.html" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit01/log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit01/output.xml" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit01/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit01/report.html" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit01/report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit06/log.html" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit06/log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit06/output.xml" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit06/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/win8-firefox/suit06/report.html" afterPath="$PROJECT_DIR$/Results/win8-firefox/suit06/report.html" />
     </list>
     <ignored path="memocast-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,16 +45,14 @@
     <favorites_list name="memocast-test" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Common.robot" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding>
                 <element signature="e#0#238#0" expanded="true" />
-                <element signature="e#824#1646#0" expanded="false" />
-                <element signature="e#1648#1861#0" expanded="false" />
                 <element signature="e#1863#2434#0" expanded="false" />
                 <element signature="e#2436#2999#0" expanded="false" />
                 <element signature="e#3001#3826#0" expanded="false" />
@@ -76,26 +67,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="06_MyProfile.robot" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tests/06_MyProfile.robot">
+      <file leaf-file-name="_browsermanagement.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/Selenium2Library/keywords/_browsermanagement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07172996">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-              <folding>
-                <element signature="e#452#1157#0" expanded="false" />
-                <element signature="e#1179#3434#0" expanded="false" />
-                <element signature="e#3436#5227#0" expanded="false" />
-                <element signature="e#5229#6606#0" expanded="false" />
-                <element signature="e#6608#7739#0" expanded="false" />
-                <element signature="e#7741#9889#0" expanded="false" />
-                <element signature="e#9891#11235#0" expanded="false" />
-                <element signature="e#11237#12285#0" expanded="false" />
-                <element signature="e#12287#13313#0" expanded="false" />
-                <element signature="e#13315#14316#0" expanded="false" />
-                <element signature="e#14318#15415#0" expanded="false" />
-                <element signature="e#15417#18945#0" expanded="false" />
-                <element signature="e#18947#21695#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_all_win8" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Resources/test_all_win8">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_all_win8-chrom.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Batch/test_all_win8-chrom.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test03_win8-chrom.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Batch/test03_win8-chrom.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="01_HeaderCommon.robot" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tests/01_HeaderCommon.robot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.25297618">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test01_win8-chrom.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Batch/test01_win8-chrom.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,7 +166,6 @@
         <option value="$PROJECT_DIR$/Tests/07_LoginPassword.robot" />
         <option value="$PROJECT_DIR$/Tests/03_SearchCommon.robot" />
         <option value="$PROJECT_DIR$/Tests/04_HomePage.robot" />
-        <option value="$PROJECT_DIR$/Resources/Common.robot" />
         <option value="$PROJECT_DIR$/Tests/t01_HeaderCommon.robot" />
         <option value="$PROJECT_DIR$/Tests/memocast_test01" />
         <option value="$PROJECT_DIR$/Batch/win8-chrome_test01.bat" />
@@ -168,14 +194,15 @@
         <option value="$PROJECT_DIR$/Tests/00_ReadMeMemocast-test.txt" />
         <option value="$PROJECT_DIR$/Tests/05_BrowseMovies.robot" />
         <option value="$PROJECT_DIR$/Tests/06_MyProfile.robot" />
+        <option value="$PROJECT_DIR$/Resources/Common.robot" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1370" />
-    <option name="height" value="754" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -276,6 +303,20 @@
               <option name="myItemId" value="memocast-test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="memocast-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="memocast-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="memocast-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -313,27 +354,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memocast-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memocast-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memocast-test" />
+              <option name="myItemId" value="Batch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Changed Files">
           <PATH>
@@ -356,6 +382,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -632,16 +659,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2102102" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30273753" sideWeight="0.503003" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.496997" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268921" sideWeight="0.496997" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19162641" sideWeight="0.4954955" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40425533" sideWeight="0.4954955" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -709,20 +736,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/robot/libraries/String.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="237" column="8" selection-start-line="237" selection-start-column="8" selection-end-line="237" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/robot/libraries/OperatingSystem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02866779">
@@ -821,18 +834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/Selenium2Library/keywords/_browsermanagement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="443" column="34" selection-start-line="443" selection-start-column="34" selection-end-line="443" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Common.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1793249">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,23 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/01_HeaderCommon.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Batch/test01_win8-chrom.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8888888">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,15 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8888888">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Batch/test01_win8-firefox.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8888888">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2592592">
           <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8888888">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -911,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="74" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="73" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05733558">
           <caret line="2" column="77" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -943,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05733558">
           <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05733558">
           <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -959,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05733558">
           <caret line="2" column="74" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,31 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08600337">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Batch/test07_win8-explorer.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05733558">
-          <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Batch/test02_win8-chrom.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Batch/test03_win8-chrom.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="76" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="2" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,7 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,12 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57383966">
           <caret line="335" column="27" selection-start-line="335" selection-start-column="5" selection-end-line="335" selection-end-column="133" />
-          <folding>
-            <element signature="e#0#488#0" expanded="true" />
-            <element signature="e#1002#4123#0" expanded="false" />
-            <element signature="e#4125#21759#0" expanded="false" />
-            <element signature="e#25846#28226#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1052,9 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.3122363">
           <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#437#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,14 +992,94 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25105485">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Results/log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/07_LoginPassword.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3586498">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.847981">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/06_MyProfile.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6974359">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch/test01_win8-firefox.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch/test07_win8-explorer.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13076924">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch/test02_win8-chrom.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch/test03_win8-chrom.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Batch/test_all_win8-chrom.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28691983">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Batch/test01_win8-chrom.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/test_all_win8">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/Selenium2Library/keywords/_browsermanagement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1077,11 +1087,9 @@
     <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="e#0#238#0" expanded="true" />
-            <element signature="e#824#1646#0" expanded="false" />
-            <element signature="e#1648#1861#0" expanded="false" />
             <element signature="e#1863#2434#0" expanded="false" />
             <element signature="e#2436#2999#0" expanded="false" />
             <element signature="e#3001#3826#0" expanded="false" />
@@ -1095,44 +1103,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Results/log.html">
+    <entry file="file://$PROJECT_DIR$/Tests/01_HeaderCommon.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25297618">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/07_LoginPassword.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3586498">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#471#0" expanded="true" />
-            <element signature="e#2637#3511#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/06_MyProfile.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07172996">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding>
-            <element signature="e#452#1157#0" expanded="false" />
-            <element signature="e#1179#3434#0" expanded="false" />
-            <element signature="e#3436#5227#0" expanded="false" />
-            <element signature="e#5229#6606#0" expanded="false" />
-            <element signature="e#6608#7739#0" expanded="false" />
-            <element signature="e#7741#9889#0" expanded="false" />
-            <element signature="e#9891#11235#0" expanded="false" />
-            <element signature="e#11237#12285#0" expanded="false" />
-            <element signature="e#12287#13313#0" expanded="false" />
-            <element signature="e#13315#14316#0" expanded="false" />
-            <element signature="e#14318#15415#0" expanded="false" />
-            <element signature="e#15417#18945#0" expanded="false" />
-            <element signature="e#18947#21695#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
